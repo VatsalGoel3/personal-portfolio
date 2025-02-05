@@ -1,10 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+// import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import TerminalWindow from '@/components/TerminalWindow';
 import TerminalText from '@/components/TerminalText';
-import ProjectCard from '@/components/ProjectCard';
+// import ProjectCard from '@/components/ProjectCard';
 import { FaGithub, FaCode, FaServer, FaDatabase, FaBook, FaGlobe } from 'react-icons/fa';
 import { IconName, IconMap } from '@/utils/icons'; // Make sure this import exists
 import Image from 'next/image';
@@ -24,14 +24,6 @@ interface Project {
   tags: ProjectTag[];
   referenceUrl?: string;
 }
-
-// Project categories and their icons
-const categories = {
-  "All": FaCode,
-  "Web Development": FaServer,
-  "Machine Learning": FaDatabase,
-  "System Design": FaGithub,
-} as const;
 
 // Project data - reordered with Cosmos Daily in third position
 const projects: Project[] = [

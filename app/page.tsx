@@ -14,7 +14,7 @@ import ProjectCard from '@/components/ProjectCard';
 // import TimelineItem from '@/components/TimelineItem';
 import ContactForm from '@/components/ContactForm';
 import ProfileImage from '@/components/ProfileImage';
-import { FEATURES } from '@/config/features';
+// import { FEATURES } from '@/config/features';
 import ScrollAnimation from '@/components/ScrollAnimation';
 import { motion, AnimatePresence } from 'framer-motion';
 import TerminalText from '@/components/TerminalText';
