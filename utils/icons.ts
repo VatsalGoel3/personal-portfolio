@@ -7,33 +7,25 @@ import {
   FaCode, FaServer, FaDatabase, FaCogs, 
   FaNetworkWired, FaBook, FaLayerGroup, FaGlobe
 } from 'react-icons/fa';
+import { IconType } from 'react-icons';
 
-export type IconName = 
-  | "Flask" | "React" | "MySQL" | "Python"
-  | "Go" | "Docker" | "Kubernetes" | "Terraform"
-  | "Machine Learning" | "Networking" | "RFC"
-  | "Caching" | "Distributed Systems" | "Raft"
-  | "Consensus" | "JavaScript" | "CSS" | "API"
-  | "HTML";
+export type IconName = "Flask" | "React" | "MySQL" | "Python" | "Machine Learning" | "Networking" | "RFC" | "Caching" | "API" | "CSS" | "HTML" | "Go" | "Distributed Systems" | "Raft" | "Consensus" | "Server";
 
-export const IconMap: Record<IconName, React.ComponentType> = {
-  "Flask": SiFlask,
-  "React": SiReact,
-  "MySQL": SiMysql,
-  "Python": SiPython,
-  "Go": SiGo,
-  "Docker": SiDocker,
-  "Kubernetes": SiKubernetes,
-  "Terraform": SiTerraform,
+export const IconMap: Record<IconName, IconType> = {
+  Flask: SiFlask,
+  React: SiReact,
+  MySQL: SiMysql,
+  Python: SiPython,
   "Machine Learning": FaDatabase,
-  "Networking": FaNetworkWired,
-  "RFC": FaBook,
-  "Caching": FaLayerGroup,
+  Networking: FaServer,
+  RFC: FaCode,
+  Caching: FaLayerGroup,
+  API: FaGlobe,
+  CSS: SiCss3,
+  HTML: SiHtml5,
+  Go: SiGo,
   "Distributed Systems": FaServer,
-  "Raft": FaCogs,
-  "Consensus": FaCode,
-  "JavaScript": SiJavascript,
-  "CSS": SiCss3,
-  "API": FaGlobe,
-  "HTML": SiHtml5,
+  Raft: FaCogs,
+  Consensus: FaCode,
+  Server: FaServer,
 }; 

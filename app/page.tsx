@@ -20,6 +20,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import TerminalText from '@/components/TerminalText';
 import TerminalWindow from '@/components/TerminalWindow';
 import { useEffect, useState } from 'react';
+import { IconName } from "@/utils/icons";
 
 const skills = {
   languages: [
@@ -54,11 +55,11 @@ const featuredProjects = [
     image: "/projects/cinematch.jpg",
     githubUrl: "https://github.com/VatsalGoel3/CineMatch",
     tags: [
-      { name: "Flask", icon: "Flask" },
-      { name: "React", icon: "React" },
-      { name: "MySQL", icon: "MySQL" },
-      { name: "Python", icon: "Python" },
-      { name: "Machine Learning", icon: "Machine Learning" }
+      { name: "Flask", icon: "Flask" as IconName},
+      { name: "React", icon: "React" as IconName},
+      { name: "MySQL", icon: "MySQL" as IconName},
+      { name: "Python", icon: "Python" as IconName},
+      { name: "Machine Learning", icon: "Machine Learning" as IconName}
     ]
   },
   {
@@ -67,10 +68,10 @@ const featuredProjects = [
     image: "/projects/dns-server.jpg",
     githubUrl: "https://github.com/VatsalGoel3/dns-server-python",
     tags: [
-      { name: "Python", icon: "Python" },
-      { name: "Networking", icon: "Networking" },
-      { name: "RFC Standards", icon: "RFC" },
-      { name: "Caching", icon: "Caching" }
+      { name: "Python", icon: "Python" as IconName },
+      { name: "Networking", icon: "Networking" as IconName },
+      { name: "RFC Standards", icon: "RFC" as IconName },
+      { name: "Caching", icon: "Caching" as IconName }
     ]
   },
   {
@@ -78,11 +79,11 @@ const featuredProjects = [
     description: "Distributed key-value store using Raft consensus protocol for fault tolerance and consistent data replication.",
     image: "/projects/raft-kv.jpg",
     tags: [
-      { name: "Go", icon: "Go" },
-      { name: "Distributed Systems", icon: "Distributed Systems" },
-      { name: "Raft", icon: "Raft" },
-      { name: "Consensus", icon: "Consensus" },
-      { name: "Fault Tolerance", icon: "Server" }
+      { name: "Go", icon: "Go" as IconName },
+      { name: "Distributed Systems", icon: "Distributed Systems" as IconName },
+      { name: "Raft", icon: "Raft" as IconName },
+      { name: "Consensus", icon: "Consensus" as IconName },
+      { name: "Fault Tolerance", icon: "Server" as IconName }
     ]
   }
 ];

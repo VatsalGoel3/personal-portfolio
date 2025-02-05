@@ -1,17 +1,20 @@
 'use client';
 
+import React from 'react';
 import { motion } from 'framer-motion';
 
 interface TerminalWindowProps {
+  title: string;
   children: React.ReactNode;
-  title?: string;
+  id?: string;
   className?: string;
 }
 
-export default function TerminalWindow({ children, title = "terminal", className = "" }: TerminalWindowProps) {
+export default function TerminalWindow({ title, children, id, className }: TerminalWindowProps) {
   return (
     <motion.div 
-      className={`bg-gray-900 rounded-lg overflow-hidden border border-gray-700 ${className}`}
+      id={id}
+      className={`bg-gray-900 rounded-lg overflow-hidden border border-gray-700 ${className ?? ''}`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}

@@ -30,11 +30,11 @@ const projects: Project[] = [
     githubUrl: "https://github.com/VatsalGoel3/CineMatch",
     category: "Machine Learning",
     tags: [
-      { name: "Flask", icon: "Flask" },
-      { name: "React", icon: "React" },
-      { name: "MySQL", icon: "MySQL" },
-      { name: "Python", icon: "Python" },
-      { name: "Machine Learning", icon: "Machine Learning" }
+      { name: "Flask", icon: "Flask" as IconName },
+      { name: "React", icon: "React" as IconName },
+      { name: "MySQL", icon: "MySQL" as IconName },
+      { name: "Python", icon: "Python" as IconName },
+      { name: "Machine Learning", icon: "Machine Learning" as IconName }
     ]
   },
   {
@@ -44,10 +44,10 @@ const projects: Project[] = [
     githubUrl: "https://github.com/VatsalGoel3/dns-server-python",
     category: "System Design",
     tags: [
-      { name: "Python", icon: "Python" },
-      { name: "Networking", icon: "Networking" },
-      { name: "RFC Standards", icon: "RFC" },
-      { name: "Caching", icon: "Caching" }
+      { name: "Python", icon: "Python" as IconName },
+      { name: "Networking", icon: "Networking" as IconName },
+      { name: "RFC Standards", icon: "RFC" as IconName },
+      { name: "Caching", icon: "Caching" as IconName }
     ]
   },
   {
@@ -57,10 +57,10 @@ const projects: Project[] = [
     githubUrl: "https://github.com/VatsalGoel3/reactjs-todolist",
     category: "Web Development",
     tags: [
-      { name: "React", icon: "React" },
-      { name: "JavaScript", icon: "JavaScript" },
-      { name: "CSS", icon: "CSS" },
-      { name: "HTML", icon: "HTML" }
+      { name: "React", icon: "React" as IconName },
+      { name: "JavaScript", icon: "JavaScript" as IconName },
+      { name: "CSS", icon: "CSS" as IconName },
+      { name: "HTML", icon: "HTML" as IconName }
     ],
     referenceUrl: "https://vt-reactjs-todolist.netlify.app"
   },
@@ -71,10 +71,10 @@ const projects: Project[] = [
     githubUrl: "https://github.com/VatsalGoel3/reactjs-nasa-api-app",
     category: "Web Development",
     tags: [
-      { name: "React", icon: "React" },
-      { name: "API Integration", icon: "API" },
-      { name: "JavaScript", icon: "JavaScript" },
-      { name: "CSS", icon: "CSS" }
+      { name: "React", icon: "React" as IconName },
+      { name: "API Integration", icon: "API" as IconName },
+      { name: "JavaScript", icon: "JavaScript" as IconName },
+      { name: "CSS", icon: "CSS" as IconName }
     ],
     referenceUrl: "https://vt-reactjs-cosmos-daily.netlify.app"
   },
@@ -85,10 +85,10 @@ const projects: Project[] = [
     category: "System Design",
     referenceUrl: "https://pdos.csail.mit.edu/6.824/papers/raft-extended.pdf",
     tags: [
-      { name: "Go", icon: "Go" },
-      { name: "Distributed Systems", icon: "Distributed Systems" },
-      { name: "Raft", icon: "Raft" },
-      { name: "Consensus", icon: "Consensus" }
+      { name: "Go", icon: "Go" as IconName },
+      { name: "Distributed Systems", icon: "Distributed Systems" as IconName },
+      { name: "Raft", icon: "Raft" as IconName },
+      { name: "Consensus", icon: "Consensus" as IconName }
     ]
   }
 ];
