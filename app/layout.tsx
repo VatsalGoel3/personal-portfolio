@@ -36,10 +36,6 @@ export async function generateMetadata(): Promise<Metadata> {
         'max-snippet': -1,
       },
     },
-    // Add cache control headers
-    headers: {
-      'Cache-Control': 'public, max-age=31536000, immutable'
-    },
   };
 }
 

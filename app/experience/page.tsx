@@ -6,6 +6,7 @@ import TerminalText from '@/components/TerminalText';
 import { motion } from 'framer-motion';
 import { FaAws, FaPython, FaReact, FaDocker, FaGithub, FaMapMarkerAlt, FaCalendarAlt, FaJava, FaDatabase, FaUsers, FaVideo, FaProjectDiagram, FaTerminal, FaCogs, FaPlug, FaBolt, FaPaintBrush, FaCubes } from 'react-icons/fa';
 import { SiKubernetes, SiPostgresql, SiNodedotjs, SiSpringboot, SiMysql, SiRedis, SiTensorflow, SiAdobecreativecloud } from 'react-icons/si';
+import { BsGearFill } from 'react-icons/bs';
 
 // Map of technology names to their icons
 const techIcons = {
@@ -168,7 +169,7 @@ export default function Experience() {
                       {/* Technologies */}
                       <div className="flex flex-wrap gap-2 pt-4">
                         {exp.tech.map((tech) => {
-                          const Icon = techIcons[tech];
+                          const Icon = techIcons[tech as keyof typeof techIcons];
                           return (
                             <span
                               key={tech}
