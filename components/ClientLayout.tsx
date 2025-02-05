@@ -10,13 +10,18 @@ export default function ClientLayout({
 }) {
   const [isLoading, setIsLoading] = useState(true);
 
-  const handleLoadingComplete = () => {
-    setIsLoading(false);
-  };
+  useEffect(() => {
+    // Hide loading screen after 3 seconds maximum
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000); // Changed from 5000 to 3000
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
-      <LoadingScreen onLoadingComplete={handleLoadingComplete} />
+      <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />
       <div 
         className={`transition-opacity duration-500 ${
           isLoading ? 'opacity-0 pointer-events-none' : 'opacity-100'

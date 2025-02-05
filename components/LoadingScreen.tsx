@@ -15,9 +15,6 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
   const loadingLines = [
     'INITIALIZING CLOUD PROTOCOLS...',
     'SECURING PERIMETER WITH KUBERNETES...',
-    'AUTOMATING ALL THE THINGS...',
-    'DEPLOYING DISTRIBUTED AWESOMENESS...',
-    'COMPILING PORTFOLIO V2.0...',
     'READY TO INNOVATE! 🚀'
   ];
 
@@ -25,17 +22,17 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
     const typeWriter = (text: string, index: number) => {
       if (index < text.length) {
         setLoadingText((prev) => prev + text.charAt(index));
-        setTimeout(() => typeWriter(text, index + 1), 25);
+        setTimeout(() => typeWriter(text, index + 1), 20);
       } else if (currentLine < loadingLines.length - 1) {
         setTimeout(() => {
           setLoadingText('');
           setCurrentLine(prev => prev + 1);
-        }, 400);
+        }, 300);
       } else {
         setTimeout(() => {
           setIsLoading(false);
           onLoadingComplete();
-        }, 600);
+        }, 400);
       }
     };
 
@@ -44,7 +41,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
     const maxLoadingTime = setTimeout(() => {
       setIsLoading(false);
       onLoadingComplete();
-    }, 5000);
+    }, 3000);
 
     return () => {
       clearTimeout(maxLoadingTime);

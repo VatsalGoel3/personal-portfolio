@@ -2,20 +2,19 @@
 
 import Image from 'next/image';
 
-export default function ProfileImage() {
+interface ProfileImageProps {
+  className?: string;
+}
+
+export default function ProfileImage({ className = "w-96 h-96" }: ProfileImageProps) {
   return (
-    <div className="relative w-96 h-96 rounded-full border-4 border-emerald-500 overflow-hidden">
+    <div className={`relative ${className}`}>
       <Image
         src="/profile.jpg"
-        alt="Profile"
+        alt="Vatsal Goel"
         fill
-        className="object-cover hover:scale-110 transition-transform duration-300"
+        className="rounded-full object-cover shadow-2xl"
         priority
-        sizes="(max-width: 768px) 100vw, 384px"
-        onError={(e) => {
-          const target = e.target as HTMLImageElement;
-          target.src = "https://via.placeholder.com/400";
-        }}
       />
     </div>
   );
