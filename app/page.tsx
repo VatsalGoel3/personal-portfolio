@@ -233,109 +233,110 @@ export default function Home() {
 
   return (
     <main>
-      {/* Hero Section - Light */}
-      <section className="relative min-h-screen flex items-center py-20 overflow-hidden w-full">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatePresence mode="wait">
-            <motion.div 
-              className="flex flex-col md:flex-row items-center gap-10 px-4 sm:px-6 lg:px-8"              
-              initial={{ opacity: 0, y: isFirstLoad ? 0 : 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ 
-                duration: isFirstLoad ? 0.8 : 0.6,
-                delay: isFirstLoad ? 0.2 : 0
-              }}
-            >
-              <div className="flex-1 space-y-10">
-                {/* Main Heading */}
-                <motion.div 
-                  className="space-y-6"
-                  initial={{ opacity: 0, y: isFirstLoad ? 20 : 0 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ 
-                    duration: isFirstLoad ? 0.8 : 0.6,
-                    delay: isFirstLoad ? 0.4 : 0.2 
-                  }}
-                >
-                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight text-center sm:text-left">
-                    Vatsal Goel
-                    <span className="block text-emerald-600 mt-4 text-center sm:text-left text-lg sm:text-xl lg:text-2xl">
-                      Software Engineer
-                    </span>
-                  </h1>
-                  <p className="text-lg sm:text-xl lg:text-2xl font-semibold bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-700 text-transparent bg-clip-text text-center sm:text-left leading-tight break-words">
-                    Engineering Scalable Cloud Solutions • Cybersecurity • AI-Driven Automation
-                  </p>
-                </motion.div>
-                
-                {/* Bio */}
-                <motion.p 
-                  className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-full sm:max-w-2xl tracking-wide text-center sm:text-left px-4 sm:px-0 break-words"
-                  initial={{ opacity: 0, y: isFirstLoad ? 20 : 0 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ 
-                    duration: isFirstLoad ? 0.8 : 0.6,
-                    delay: isFirstLoad ? 0.6 : 0.4 
-                  }}
-                >
-                  Hi, I&apos;m Vatsal Goel, a Software Engineer passionate about building scalable cloud systems, 
-                  securing data, and driving automation. With experience in software development, cybersecurity, 
-                  and cloud computing, I specialize in crafting efficient, high-performance solutions. 
-                  <span className="block mt-3 sm:mt-4">
-                    Currently pursuing my Master&apos;s in Computer Science at the University of Utah, 
-                    I&apos;ve worked on projects ranging from automation workflows to large-scale distributed systems. 
-                    Let&apos;s connect and build something impactful!
-                  </span>
-                </motion.p>
-
-                {/* Social Links */}
-                <motion.div 
-                  className="flex gap-6 pt-4 justify-center sm:justify-start"                  
-                  initial={{ opacity: 0, y: isFirstLoad ? 20 : 0 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ 
-                    duration: isFirstLoad ? 0.8 : 0.6,
-                    delay: isFirstLoad ? 0.8 : 0.6 
-                  }}
-                >
-                  <a
-                    href="https://github.com/VatsalGoel3"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-4 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-all duration-300 hover:scale-110 hover:shadow-lg"
-                  >
-                    <FaGithub className="w-8 h-8" />
-                  </a>
-                  <a 
-                    href="https://www.linkedin.com/in/vatsalgoel/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-4 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-all duration-300 hover:scale-110 hover:shadow-lg"
-                  >
-                    <FaLinkedin className="w-8 h-8" />
-                  </a>
-                </motion.div>
-              </div>
-
-              {/* Profile Image */}
+    {/* Hero Section - Light */}
+    <section className="relative min-h-screen flex flex-col items-center justify-center py-10 sm:py-20 overflow-hidden w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <AnimatePresence mode="wait">
+          <motion.div 
+            className="flex flex-col sm:flex-row items-center gap-10 px-4 sm:px-6 lg:px-8 text-center sm:text-left"
+            initial={{ opacity: 0, y: isFirstLoad ? 0 : 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ 
+              duration: isFirstLoad ? 0.8 : 0.6,
+              delay: isFirstLoad ? 0.2 : 0
+            }}
+          >
+            <div className="flex-1 space-y-6 sm:space-y-10">
+              
+              {/* Main Heading */}
               <motion.div 
-                className="flex-shrink-0 p-8"
-                initial={{ opacity: 0, scale: isFirstLoad ? 0.8 : 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
+                className="space-y-4 sm:space-y-6"
+                initial={{ opacity: 0, y: isFirstLoad ? 20 : 0 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ 
+                  duration: isFirstLoad ? 0.8 : 0.6,
+                  delay: isFirstLoad ? 0.4 : 0.2 
+                }}
+              >
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight">
+                  Vatsal Goel
+                </h1>
+                <span className="block text-emerald-600 mt-2 sm:mt-4 text-lg sm:text-xl lg:text-2xl">
+                  Software Engineer
+                </span>
+                <p className="text-md sm:text-lg lg:text-xl font-semibold bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-700 text-transparent bg-clip-text leading-snug sm:leading-tight break-words">
+                  Engineering Scalable Cloud Solutions • Cybersecurity • AI-Driven Automation
+                </p>
+              </motion.div>
+              
+              {/* Bio */}
+              <motion.p 
+                className="text-sm sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-[90%] sm:max-w-2xl tracking-wide px-4 sm:px-0"
+                initial={{ opacity: 0, y: isFirstLoad ? 20 : 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ 
                   duration: isFirstLoad ? 0.8 : 0.6,
                   delay: isFirstLoad ? 0.6 : 0.4 
                 }}
               >
-                <div className="relative transform hover:scale-105 transition-transform duration-300">
-                  <div className="absolute inset-0 bg-emerald-500 rounded-full blur-2xl opacity-20"></div>
-                  <ProfileImage className="relative w-72 h-72 sm:w-96 sm:h-96" />
-                  </div>
+                Hi, I&apos;m Vatsal Goel, a Software Engineer passionate about building scalable cloud systems, 
+                securing data, and driving automation. With experience in software development, cybersecurity, 
+                and cloud computing, I specialize in crafting efficient, high-performance solutions. 
+                <span className="block mt-3 sm:mt-4">
+                  Currently pursuing my Master&apos;s in Computer Science at the University of Utah, 
+                  I&apos;ve worked on projects ranging from automation workflows to large-scale distributed systems. 
+                  Let&apos;s connect and build something impactful!
+                </span>
+              </motion.p>
+
+              {/* Social Links */}
+              <motion.div 
+                className="flex gap-6 pt-4 justify-center sm:justify-start"
+                initial={{ opacity: 0, y: isFirstLoad ? 20 : 0 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ 
+                  duration: isFirstLoad ? 0.8 : 0.6,
+                  delay: isFirstLoad ? 0.8 : 0.6 
+                }}
+              >
+                <a
+                  href="https://github.com/VatsalGoel3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                >
+                  <FaGithub className="w-8 h-8" />
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/vatsalgoel/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                >
+                  <FaLinkedin className="w-8 h-8" />
+                </a>
               </motion.div>
+            </div>
+
+            {/* Profile Image */}
+            <motion.div 
+              className="flex-shrink-0 p-4 sm:p-8"
+              initial={{ opacity: 0, scale: isFirstLoad ? 0.8 : 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ 
+                duration: isFirstLoad ? 0.8 : 0.6,
+                delay: isFirstLoad ? 0.6 : 0.4 
+              }}
+            >
+              <div className="relative transform hover:scale-105 transition-transform duration-300">
+                <div className="absolute inset-0 bg-emerald-500 rounded-full blur-2xl opacity-20"></div>
+                <ProfileImage className="relative w-56 h-56 sm:w-80 sm:h-80 md:w-96 md:h-96" />
+              </div>
             </motion.div>
-          </AnimatePresence>
-        </div>
-      </section>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    </section>
 
       {/* Skills Section */}
       <ScrollAnimation>
