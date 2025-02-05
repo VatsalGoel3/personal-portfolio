@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import ScrollAnimation from '@/components/ScrollAnimation';
+// import ScrollAnimation from '@/components/ScrollAnimation';
 import TerminalWindow from '@/components/TerminalWindow';
 import TerminalText from '@/components/TerminalText';
 import { motion } from 'framer-motion';
@@ -41,7 +41,7 @@ export default function ContactPage() {
             >
               <h1 className="text-4xl font-bold text-white mb-3">Let's Connect</h1>
               <p className="text-gray-400 text-lg">
-                I'm always open to new opportunities and interesting projects
+                I&apos;m always open to new opportunities and interesting projects
               </p>
             </motion.div>
           </TerminalWindow>

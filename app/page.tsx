@@ -1,17 +1,17 @@
 'use client';
 
-import Image from "next/image";
-import Link from "next/link";
+// import Image from "next/image";
+// import Link from "next/link";
 import { 
   FaGithub, FaLinkedin, FaCode, FaServer, FaTools,
   FaPython, FaJava, FaJs, FaReact, FaAws, FaDocker 
 } from "react-icons/fa";
 import { 
   SiCplusplus, SiGo, SiTensorflow, SiKubernetes, 
-  SiTerraform, SiFlask, SiExpress, SiMysql, SiRedis 
+  SiTerraform, SiFlask, SiExpress, SiMysql 
 } from "react-icons/si";
 import ProjectCard from '@/components/ProjectCard';
-import TimelineItem from '@/components/TimelineItem';
+// import TimelineItem from '@/components/TimelineItem';
 import ContactForm from '@/components/ContactForm';
 import ProfileImage from '@/components/ProfileImage';
 import { FEATURES } from '@/config/features';
@@ -87,135 +87,135 @@ const featuredProjects = [
   }
 ];
 
-function SkillsSection({ skills }: { skills: typeof skills }) {
-  if (FEATURES.ENHANCED_SKILLS_UI) {
-    return (
-      <div className="text-white">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.2 }}
-          style={{ transform: "translateZ(0)" }}
-          className="text-center mb-16 will-change-transform"
-        >
-          <h2 className="text-4xl font-bold mb-4">Skills & Technologies</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            A comprehensive toolkit for building scalable and secure applications
-          </p>
-        </motion.div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-          {Object.entries(skills).map(([category, items], categoryIndex) => (
-            <motion.div
-              key={category}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ 
-                duration: 0.6, 
-                ease: "easeOut",
-                delay: categoryIndex * 0.1
-              }}
-              viewport={{ once: true, amount: 0.2 }}
-              style={{ transform: "translateZ(0)" }}
-              className="space-y-8 will-change-transform"
-            >
-              <div className="flex items-center gap-3 text-emerald-400 border-b border-gray-700/50 pb-4">
-                {category === 'languages' && <FaCode className="w-6 h-6" />}
-                {category === 'frameworks' && <FaServer className="w-6 h-6" />}
-                {category === 'tools' && <FaTools className="w-6 h-6" />}
-                <h3 className="text-2xl font-bold capitalize">
-                  {category}
-                </h3>
-              </div>
-              
-              <div className="space-y-4">
-                {items.map((skill) => (
-                  <motion.div
-                    key={skill.name}
-                    className="group relative overflow-hidden bg-gray-800/30 backdrop-blur-sm rounded-xl p-4 hover:bg-gray-800/50 transition-all duration-300 border border-gray-700/50"
-                  >
-                    <div className="flex items-center gap-4">
-                      <div className="p-2 bg-gray-900/50 rounded-lg">
-                        <skill.icon className="w-6 h-6 text-emerald-400" />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-white font-medium group-hover:text-emerald-400 transition-colors">
-                          {skill.name}
-                        </h4>
-                        <p className="text-sm text-gray-400">{skill.level}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <section className="bg-gray-900 py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold mb-12 text-center">Skills & Technologies</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3 className="text-xl font-semibold text-emerald-500 mb-4 flex items-center gap-2">
-              <FaCode className="w-5 h-5" /> Languages
-            </h3>
-            <div className="space-y-2">
-              {skills.languages.map((skill) => (
-                <div
-                  key={skill.name}
-                  className="flex items-center gap-2 text-gray-300 p-2 rounded hover:bg-gray-800"
-                >
-                  <skill.icon className="w-5 h-5 text-emerald-400" />
-                  {skill.name}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-semibold text-emerald-500 mb-4 flex items-center gap-2">
-              <FaServer className="w-5 h-5" /> Frameworks
-            </h3>
-            <div className="space-y-2">
-              {skills.frameworks.map((skill) => (
-                <div
-                  key={skill.name}
-                  className="flex items-center gap-2 text-gray-300 p-2 rounded hover:bg-gray-800"
-                >
-                  <skill.icon className="w-5 h-5 text-emerald-400" />
-                  {skill.name}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-semibold text-emerald-500 mb-4 flex items-center gap-2">
-              <FaTools className="w-5 h-5" /> Tools & Platforms
-            </h3>
-            <div className="space-y-2">
-              {skills.tools.map((skill) => (
-                <div
-                  key={skill.name}
-                  className="flex items-center gap-2 text-gray-300 p-2 rounded hover:bg-gray-800"
-                >
-                  <skill.icon className="w-5 h-5 text-emerald-400" />
-                  {skill.name}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+// function SkillsSection({ skills }: { skills: typeof skills }) {
+//   if (FEATURES.ENHANCED_SKILLS_UI) {
+//     return (
+//       <div className="text-white">
+//         <motion.div
+//           initial={{ opacity: 0, y: 20 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.6, ease: "easeOut" }}
+//           viewport={{ once: true, amount: 0.2 }}
+//           style={{ transform: "translateZ(0)" }}
+//           className="text-center mb-16 will-change-transform"
+//         >
+//           <h2 className="text-4xl font-bold mb-4">Skills & Technologies</h2>
+//           <p className="text-gray-400 max-w-2xl mx-auto">
+//             A comprehensive toolkit for building scalable and secure applications
+//           </p>
+//         </motion.div>
+//         
+//         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+//           {Object.entries(skills).map(([category, items], categoryIndex) => (
+//             <motion.div
+//               key={category}
+//               initial={{ opacity: 0, x: -20 }}
+//               whileInView={{ opacity: 1, x: 0 }}
+//               transition={{ 
+//                 duration: 0.6, 
+//                 ease: "easeOut",
+//                 delay: categoryIndex * 0.1
+//               }}
+//               viewport={{ once: true, amount: 0.2 }}
+//               style={{ transform: "translateZ(0)" }}
+//               className="space-y-8 will-change-transform"
+//             >
+//               <div className="flex items-center gap-3 text-emerald-400 border-b border-gray-700/50 pb-4">
+//                 {category === 'languages' && <FaCode className="w-6 h-6" />}
+//                 {category === 'frameworks' && <FaServer className="w-6 h-6" />}
+//                 {category === 'tools' && <FaTools className="w-6 h-6" />}
+//                 <h3 className="text-2xl font-bold capitalize">
+//                   {category}
+//                 </h3>
+//               </div>
+//               
+//               <div className="space-y-4">
+//                 {items.map((skill) => (
+//                   <motion.div
+//                     key={skill.name}
+//                     className="group relative overflow-hidden bg-gray-800/30 backdrop-blur-sm rounded-xl p-4 hover:bg-gray-800/50 transition-all duration-300 border border-gray-700/50"
+//                   >
+//                     <div className="flex items-center gap-4">
+//                       <div className="p-2 bg-gray-900/50 rounded-lg">
+//                         <skill.icon className="w-6 h-6 text-emerald-400" />
+//                       </div>
+//                       <div className="flex-1">
+//                         <h4 className="text-white font-medium group-hover:text-emerald-400 transition-colors">
+//                           {skill.name}
+//                         </h4>
+//                         <p className="text-sm text-gray-400">{skill.level}</p>
+//                       </div>
+//                     </div>
+//                   </motion.div>
+//                 ))}
+//               </div>
+//             </motion.div>
+//           ))}
+//         </div>
+//       </div>
+//     );
+//   }
+//
+//   return (
+//     <section className="bg-gray-900 py-20">
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//         <h2 className="text-3xl font-bold mb-12 text-center">Skills & Technologies</h2>
+//         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+//           <div>
+//             <h3 className="text-xl font-semibold text-emerald-500 mb-4 flex items-center gap-2">
+//               <FaCode className="w-5 h-5" /> Languages
+//             </h3>
+//             <div className="space-y-2">
+//               {skills.languages.map((skill) => (
+//                 <div
+//                   key={skill.name}
+//                   className="flex items-center gap-2 text-gray-300 p-2 rounded hover:bg-gray-800"
+//                 >
+//                   <skill.icon className="w-5 h-5 text-emerald-400" />
+//                   {skill.name}
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//
+//           <div>
+//             <h3 className="text-xl font-semibold text-emerald-500 mb-4 flex items-center gap-2">
+//               <FaServer className="w-5 h-5" /> Frameworks
+//             </h3>
+//             <div className="space-y-2">
+//               {skills.frameworks.map((skill) => (
+//                 <div
+//                   key={skill.name}
+//                   className="flex items-center gap-2 text-gray-300 p-2 rounded hover:bg-gray-800"
+//                 >
+//                   <skill.icon className="w-5 h-5 text-emerald-400" />
+//                   {skill.name}
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//
+//           <div>
+//             <h3 className="text-xl font-semibold text-emerald-500 mb-4 flex items-center gap-2">
+//               <FaTools className="w-5 h-5" /> Tools & Platforms
+//             </h3>
+//             <div className="space-y-2">
+//               {skills.tools.map((skill) => (
+//                 <div
+//                   key={skill.name}
+//                   className="flex items-center gap-2 text-gray-300 p-2 rounded hover:bg-gray-800"
+//                 >
+//                   <skill.icon className="w-5 h-5 text-emerald-400" />
+//                   {skill.name}
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 export default function Home() {
   const [isFirstLoad, setIsFirstLoad] = useState(true);
@@ -228,7 +228,7 @@ export default function Home() {
     } else {
       setIsFirstLoad(false);
     }
-  }, []);
+  }, [setIsFirstLoad]);
 
   return (
     <main>
@@ -277,7 +277,7 @@ export default function Home() {
                     delay: isFirstLoad ? 0.6 : 0.4 
                   }}
                 >
-                  Hi, I'm Vatsal Goel, a Software Engineer passionate about building scalable cloud systems, 
+                  Hi, I&apos;m Vatsal Goel, a Software Engineer passionate about building scalable cloud systems, 
                   securing data, and driving automation. With experience in software development, cybersecurity, 
                   and cloud computing, I specialize in crafting efficient, high-performance solutions. 
                   <span className="block mt-4">

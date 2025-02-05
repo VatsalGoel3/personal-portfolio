@@ -106,9 +106,6 @@ const projects: Project[] = [
 ];
 
 export default function ProjectsPage() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects);
-
   return (
     <main className="pt-16">
       <section className="relative min-h-screen bg-[#0a192f]">
@@ -157,7 +154,7 @@ export default function ProjectsPage() {
           {/* Projects Grid - Each project in its own terminal */}
           <div className="grid grid-cols-1 gap-8">
             <AnimatePresence mode="wait">
-              {filteredProjects.map((project, index) => (
+              {projects.map((project, index) => (
                 <motion.div
                   key={project.title}
                   initial={{ opacity: 0, y: 20 }}

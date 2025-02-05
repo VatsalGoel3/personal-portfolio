@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import NavLogo from './NavLogo';
 

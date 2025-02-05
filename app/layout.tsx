@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import PageWrapper from "@/components/PageWrapper";
+// import PageWrapper from "@/components/PageWrapper";
 import ClientLayout from "@/components/ClientLayout";
 import { Suspense } from 'react';
 import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration';
-import { headers } from 'next/headers';
+// import { headers } from 'next/headers';
 
 const geist = Geist({
   subsets: ["latin"],
