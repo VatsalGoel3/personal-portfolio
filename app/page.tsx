@@ -308,7 +308,7 @@ export default function Home() {
                   <FaGithub className="w-10 h-10" />
                 </a>
                 <a 
-                  href="https://www.linkedin.com/in/vatsalgoel/"
+                  href="https://www.linkedin.com/in/vatsal-goel3/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-all duration-300 hover:scale-110 hover:shadow-lg"
