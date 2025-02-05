@@ -248,7 +248,7 @@ export default function Home() {
           >
             <div className="flex-1 space-y-6 sm:space-y-10">
               
-              {/* Main Heading - Adjusted Padding to Avoid Navbar Overlap */}
+              {/* Main Heading - Large for Desktop, Responsive for Mobile */}
               <motion.div 
                 className="space-y-4 sm:space-y-6 pt-8 sm:pt-12"
                 initial={{ opacity: 0, y: isFirstLoad ? 20 : 0 }}
@@ -258,20 +258,20 @@ export default function Home() {
                   delay: isFirstLoad ? 0.4 : 0.2 
                 }}
               >
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight">
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 tracking-tight">
                   Vatsal Goel
                 </h1>
-                <span className="block text-emerald-600 mt-2 sm:mt-4 text-lg sm:text-xl lg:text-2xl">
+                <span className="block text-emerald-600 mt-2 sm:mt-4 text-2xl sm:text-5xl lg:text-7xl font-semibold">
                   Software Engineer
                 </span>
-                <p className="text-md sm:text-lg lg:text-xl font-semibold bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-700 text-transparent bg-clip-text leading-snug sm:leading-tight break-words">
+                <p className="text-2xl sm:text-2xl lg:text-3xl font-semibold bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-700 text-transparent bg-clip-text leading-snug sm:leading-tight break-words">
                   Engineering Scalable Cloud Solutions • Cybersecurity • AI-Driven Automation
                 </p>
               </motion.div>
               
               {/* Bio - Centered Properly */}
               <motion.p 
-                className="text-sm sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl mx-auto sm:mx-0 tracking-wide"
+                className="text-lg sm:text-xl md:text-1.5xl text-gray-600 leading-relaxed max-w-xl mx-auto sm:mx-0 tracking-wide"
                 initial={{ opacity: 0, y: isFirstLoad ? 20 : 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ 
@@ -305,7 +305,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="p-4 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-all duration-300 hover:scale-110 hover:shadow-lg"
                 >
-                  <FaGithub className="w-8 h-8" />
+                  <FaGithub className="w-10 h-10" />
                 </a>
                 <a 
                   href="https://www.linkedin.com/in/vatsalgoel/"
@@ -313,7 +313,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="p-4 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-all duration-300 hover:scale-110 hover:shadow-lg"
                 >
-                  <FaLinkedin className="w-8 h-8" />
+                  <FaLinkedin className="w-10 h-10" />
                 </a>
               </motion.div>
             </div>
@@ -330,7 +330,7 @@ export default function Home() {
             >
               <div className="relative transform hover:scale-105 transition-transform duration-300">
                 <div className="absolute inset-0 bg-emerald-500 rounded-full blur-2xl opacity-20"></div>
-                <ProfileImage className="relative w-56 h-56 sm:w-80 sm:h-80 md:w-96 md:h-96" />
+                <ProfileImage className="relative w-64 h-64 sm:w-96 sm:h-96 lg:w-112 lg:h-112" />
               </div>
             </motion.div>
           </motion.div>
