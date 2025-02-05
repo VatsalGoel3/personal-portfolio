@@ -259,18 +259,18 @@ export default function Home() {
                 >
                   <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight text-center sm:text-left">
                     Vatsal Goel
-                    <span className="block text-emerald-600 mt-6">
+                    <span className="block text-emerald-600 mt-4 text-center sm:text-left text-lg sm:text-xl lg:text-2xl">
                       Software Engineer
                     </span>
                   </h1>
-                  <p className="text-xl sm:text-2xl lg:text-3xl font-semibold bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-700 text-transparent bg-clip-text">
+                  <p className="text-lg sm:text-xl lg:text-2xl font-semibold bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-700 text-transparent bg-clip-text text-center sm:text-left leading-tight break-words">
                     Engineering Scalable Cloud Solutions • Cybersecurity • AI-Driven Automation
                   </p>
                 </motion.div>
                 
                 {/* Bio */}
                 <motion.p 
-                  className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl tracking-wide"
+                  className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-full sm:max-w-2xl tracking-wide text-center sm:text-left px-4 sm:px-0 break-words"
                   initial={{ opacity: 0, y: isFirstLoad ? 20 : 0 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ 
@@ -281,7 +281,7 @@ export default function Home() {
                   Hi, I&apos;m Vatsal Goel, a Software Engineer passionate about building scalable cloud systems, 
                   securing data, and driving automation. With experience in software development, cybersecurity, 
                   and cloud computing, I specialize in crafting efficient, high-performance solutions. 
-                  <span className="block mt-4">
+                  <span className="block mt-3 sm:mt-4">
                     Currently pursuing my Master&apos;s in Computer Science at the University of Utah, 
                     I&apos;ve worked on projects ranging from automation workflows to large-scale distributed systems. 
                     Let&apos;s connect and build something impactful!
