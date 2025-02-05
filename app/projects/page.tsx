@@ -1,15 +1,13 @@
 'use client';
 
-// import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import TerminalWindow from '@/components/TerminalWindow';
 import TerminalText from '@/components/TerminalText';
-// import ProjectCard from '@/components/ProjectCard';
-import { FaGithub, FaCode, FaServer, FaDatabase, FaBook, FaGlobe } from 'react-icons/fa';
-import { IconName, IconMap } from '@/utils/icons'; // Make sure this import exists
+// Removed unused imports: FaCode, FaServer, FaDatabase
+import { FaGithub, FaLinkedin, FaBook, FaGlobe } from 'react-icons/fa';
+import { IconName, IconMap } from '@/utils/icons';
 import Image from 'next/image';
 
-// Define the project interface
 interface ProjectTag {
   name: string;
   icon: IconName;
@@ -25,7 +23,6 @@ interface Project {
   referenceUrl?: string;
 }
 
-// Project data - reordered with Cosmos Daily in third position
 const projects: Project[] = [
   {
     title: "CineMatch",
@@ -56,7 +53,7 @@ const projects: Project[] = [
   },
   {
     title: "To-Do List",
-    description: "A simple and functional to-do list application built with ReactJS, showcasing the essential features of a task management tool while exploring React's core capabilities.",
+    description: "A simple and functional to-do list application built with ReactJS, showcasing the essential features of a task management tool while exploring React&apos;s core capabilities.",
     image: "/projects/reactjs-todolist.jpg",
     githubUrl: "https://github.com/VatsalGoel3/reactjs-todolist",
     category: "Web Development",
@@ -70,7 +67,7 @@ const projects: Project[] = [
   },
   {
     title: "Cosmos Daily",
-    description: "A ReactJS-based web application that integrates with NASA's API to showcase daily astronomical images, space discoveries, and celestial events. Features include daily space photos, Mars rover imagery, and interactive space exploration content.",
+    description: "A ReactJS-based web application that integrates with NASA&apos;s API to showcase daily astronomical images, space discoveries, and celestial events.",
     image: "/projects/reactjs-nasa-api-app.jpg",
     githubUrl: "https://github.com/VatsalGoel3/reactjs-nasa-api-app",
     category: "Web Development",
@@ -104,13 +101,11 @@ export default function ProjectsPage() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_2px,transparent_1px),linear-gradient(to_bottom,#ffffff05_2px,transparent_1px)] bg-[size:24px_24px] bg-fixed" />
         
         <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          {/* Header Terminal */}
           <TerminalWindow title="projects.sh" className="mb-8">
             <TerminalText 
               text="ls -la ~/projects" 
               className="mb-4 text-sm opacity-80 hover:opacity-100 transition-opacity"
             />
-            
             <div className="px-6 pb-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -123,27 +118,10 @@ export default function ProjectsPage() {
                   A collection of my work in software development and system design
                 </p>
               </motion.div>
-
-              {/* Commented out category filters */}
-              {/* <div className="flex flex-wrap gap-4 justify-center mb-8">
-                {Object.entries(categories).map(([category, Icon]) => (
-                  <button
-                    key={category}
-                    onClick={() => setSelectedCategory(category)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300
-                      ${selectedCategory === category 
-                        ? 'bg-emerald-500 text-white' 
-                        : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}
-                  >
-                    <Icon className="w-4 h-4" />
-                    {category}
-                  </button>
-                ))}
-              </div> */}
             </div>
           </TerminalWindow>
 
-          {/* Projects Grid - Each project in its own terminal */}
+          {/* Projects Grid */}
           <div className="grid grid-cols-1 gap-8">
             <AnimatePresence mode="wait">
               {projects.map((project, index) => (
@@ -173,7 +151,7 @@ export default function ProjectsPage() {
                             quality={95}
                             onError={(e) => {
                               const target = e.target as HTMLImageElement;
-                              target.src = "/projects/placeholder.jpg"; // Fallback image
+                              target.src = "/projects/placeholder.jpg";
                             }}
                           />
                         </div>
@@ -245,4 +223,4 @@ export default function ProjectsPage() {
       </section>
     </main>
   );
-} 
+}

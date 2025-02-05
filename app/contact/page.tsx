@@ -1,11 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-// import ScrollAnimation from '@/components/ScrollAnimation';
-import TerminalWindow from '@/components/TerminalWindow';
-import TerminalText from '@/components/TerminalText';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaGithub, FaLinkedin, FaMapMarkerAlt, FaGlobe } from 'react-icons/fa';
+import TerminalWindow from '@/components/TerminalWindow';
+import TerminalText from '@/components/TerminalText';
+import ContactForm from '@/components/ContactForm';
 
 export default function ContactPage() {
   const [mounted, setMounted] = useState(false);
@@ -14,7 +14,7 @@ export default function ContactPage() {
     setMounted(true);
   }, []);
 
-  // Don't render until mounted
+  // Don’t render until mounted (avoid hydration mismatch)
   if (!mounted) {
     return null;
   }
@@ -39,7 +39,8 @@ export default function ContactPage() {
               viewport={{ once: true }}
               className="text-center mb-6"
             >
-              <h1 className="text-4xl font-bold text-white mb-3">Let's Connect</h1>
+              {/* Changed "Let's Connect" to escape the apostrophe */}
+              <h1 className="text-4xl font-bold text-white mb-3">Let&apos;s Connect</h1>
               <p className="text-gray-400 text-lg">
                 I&apos;m always open to new opportunities and interesting projects
               </p>
@@ -176,4 +177,4 @@ export default function ContactPage() {
       </section>
     </main>
   );
-} 
+}

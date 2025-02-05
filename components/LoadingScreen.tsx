@@ -3,6 +3,13 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// Moved outside the component to ensure it is constant
+const LOADING_LINES = [
+  'INITIALIZING CLOUD PROTOCOLS...',
+  'SECURING PERIMETER WITH KUBERNETES...',
+  'READY TO INNOVATE! 🚀'
+];
+
 interface LoadingScreenProps {
   onLoadingComplete: () => void;
 }
@@ -12,18 +19,12 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
   const [loadingText, setLoadingText] = useState('');
   const [currentLine, setCurrentLine] = useState(0);
 
-  const loadingLines = [
-    'INITIALIZING CLOUD PROTOCOLS...',
-    'SECURING PERIMETER WITH KUBERNETES...',
-    'READY TO INNOVATE! 🚀'
-  ];
-
   useEffect(() => {
     const typeWriter = (text: string, index: number) => {
       if (index < text.length) {
         setLoadingText((prev) => prev + text.charAt(index));
         setTimeout(() => typeWriter(text, index + 1), 20);
-      } else if (currentLine < loadingLines.length - 1) {
+      } else if (currentLine < LOADING_LINES.length - 1) {
         setTimeout(() => {
           setLoadingText('');
           setCurrentLine(prev => prev + 1);
@@ -36,7 +37,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
       }
     };
 
-    typeWriter(loadingLines[currentLine], 0);
+    typeWriter(LOADING_LINES[currentLine], 0);
 
     const maxLoadingTime = setTimeout(() => {
       setIsLoading(false);
@@ -50,7 +51,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
 
   if (!isLoading) return null;
 
-  const progress = (currentLine / loadingLines.length) * 100;
+  const progress = (currentLine / LOADING_LINES.length) * 100;
 
   return (
     <AnimatePresence>
@@ -58,9 +59,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
         initial={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         className="fixed inset-0 bg-black z-50 flex items-center justify-center p-4"
-        style={{
-          background: 'radial-gradient(circle, #000000 0%, #111111 100%)',
-        }}
+        style={{ background: 'radial-gradient(circle, #000000 0%, #111111 100%)' }}
       >
         <div className="relative max-w-2xl w-full">
           {/* CRT Screen Effect */}
@@ -70,18 +69,15 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
 
           {/* Monitor Frame */}
           <div className="bg-gray-800 rounded-lg p-8 border-8 border-gray-700 shadow-2xl">
-            {/* Screen Content */}
             <div className="bg-black p-6 rounded font-mono relative overflow-hidden">
               {/* Scan Lines */}
               <div className="absolute inset-0 pointer-events-none bg-scan-lines opacity-10" />
-              
               {/* Monitor Glare */}
               <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-white/5 to-transparent" />
 
-              {/* Content */}
               <div className="relative">
                 <div className="text-[#33ff33] text-lg">
-                  {loadingLines.slice(0, currentLine).map((line, index) => (
+                  {LOADING_LINES.slice(0, currentLine).map((line, index) => (
                     <div key={index} className="mb-2 pixel-font">{line}</div>
                   ))}
                   <motion.div
@@ -108,10 +104,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
                     style={{ width: `${progress}%` }}
                   >
                     {Array.from({ length: Math.floor(progress / 10) }).map((_, i) => (
-                      <div 
-                        key={i}
-                        className="inline-block h-full w-2 bg-[#001100] mx-px"
-                      />
+                      <div key={i} className="inline-block h-full w-2 bg-[#001100] mx-px" />
                     ))}
                   </div>
                 </div>
@@ -125,4 +118,4 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
       </motion.div>
     </AnimatePresence>
   );
-} 
+}
