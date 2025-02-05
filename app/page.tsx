@@ -300,20 +300,19 @@ export default function Home() {
                 >
                   <a
                     href="https://github.com/VatsalGoel3"
-            target="_blank"
-            rel="noopener noreferrer"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="p-4 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-all duration-300 hover:scale-110 hover:shadow-lg"
                   >
                     <FaGithub className="w-8 h-8" />
-          </a>
+                  </a>
                   <a 
                     href="https://www.linkedin.com/in/vatsalgoel/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-4 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-all duration-300 hover:scale-110 hover:shadow-lg"
                   >
-                    <FaLinkedin className="w-5 h-5" />
-                    LinkedIn
+                    <FaLinkedin className="w-8 h-8" />
                   </a>
                 </motion.div>
               </div>

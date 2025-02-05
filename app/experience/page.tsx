@@ -90,7 +90,7 @@ function highlightMetrics(text: string, className = 'text-emerald-400 font-semib
 
 export default function Experience() {
   return (
-    <main className="pt-16">
+    (<main className="pt-16">
       <ScrollAnimation>
         <section className="relative py-12 bg-[#0a192f]">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_2px,transparent_1px),linear-gradient(to_bottom,#ffffff05_2px,transparent_1px)] bg-[size:24px_24px] bg-fixed" />
@@ -190,6 +190,6 @@ export default function Experience() {
           </div>
         </section>
       </ScrollAnimation>
-    </main>
+    </main>)
   );
 } 

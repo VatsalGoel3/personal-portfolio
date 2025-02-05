@@ -41,7 +41,7 @@ export default function NavLogo() {
   };
 
   return (
-    <Link href="/" onClick={handleClick}>
+    (<Link href="/" onClick={handleClick} legacyBehavior>
       <motion.div
         className="relative group cursor-pointer"
         onMouseEnter={() => setIsHovered(true)}
@@ -96,6 +96,6 @@ export default function NavLogo() {
           transition={{ duration: 0.3 }}
         />
       </motion.div>
-    </Link>
+    </Link>)
   );
 } 

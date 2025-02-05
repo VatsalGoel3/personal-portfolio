@@ -9,6 +9,20 @@ export default function ClientLayout({
   children: React.ReactNode;
 }) {
   const [isLoading, setIsLoading] = useState(true);
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
+
+  useEffect(() => {
+    // Check if the page is being loaded for the first time
+    const handleBeforeUnload = () => {
+      setIsFirstLoad(false);
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, []);
 
   useEffect(() => {
     // Hide loading screen after 3 seconds maximum
@@ -21,7 +35,7 @@ export default function ClientLayout({
 
   return (
     <>
-      <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />
+      {isFirstLoad && <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />}
       <div 
         className={`transition-opacity duration-500 ${
           isLoading ? 'opacity-0 pointer-events-none' : 'opacity-100'

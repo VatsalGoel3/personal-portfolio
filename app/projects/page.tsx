@@ -95,7 +95,7 @@ const projects: Project[] = [
 
 export default function ProjectsPage() {
   return (
-    <main className="pt-16">
+    (<main className="pt-16">
       <section className="relative min-h-screen bg-[#0a192f]">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_2px,transparent_1px),linear-gradient(to_bottom,#ffffff05_2px,transparent_1px)] bg-[size:24px_24px] bg-fixed" />
         
@@ -220,6 +220,6 @@ export default function ProjectsPage() {
           </div>
         </div>
       </section>
-    </main>
+    </main>)
   );
 }
