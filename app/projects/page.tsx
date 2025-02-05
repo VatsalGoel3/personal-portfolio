@@ -3,8 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import TerminalWindow from '@/components/TerminalWindow';
 import TerminalText from '@/components/TerminalText';
-// Removed unused imports: FaCode, FaServer, FaDatabase
-import { FaGithub, FaLinkedin, FaBook, FaGlobe } from 'react-icons/fa';
+import { FaGithub, FaBook, FaGlobe } from 'react-icons/fa';
 import { IconName, IconMap } from '@/utils/icons';
 import Image from 'next/image';
 

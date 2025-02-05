@@ -3,7 +3,7 @@
 // import Image from "next/image";
 // import Link from "next/link";
 import { 
-  FaGithub, FaLinkedin, FaCode, FaServer, FaTools,
+  FaGithub, FaCode, FaServer, FaTools,
   FaPython, FaJava, FaJs, FaReact, FaAws, FaDocker 
 } from "react-icons/fa";
 import { 
@@ -281,9 +281,9 @@ export default function Home() {
                   securing data, and driving automation. With experience in software development, cybersecurity, 
                   and cloud computing, I specialize in crafting efficient, high-performance solutions. 
                   <span className="block mt-4">
-                    Currently pursuing my Master's in Computer Science at the University of Utah, 
-                    I've worked on projects ranging from automation workflows to large-scale distributed systems. 
-                    Let's connect and build something impactful!
+                    Currently pursuing my Master&apos;s in Computer Science at the University of Utah, 
+                    I&apos;ve worked on projects ranging from automation workflows to large-scale distributed systems. 
+                    Let&apos;s connect and build something impactful!
                   </span>
                 </motion.p>
 
@@ -305,14 +305,6 @@ export default function Home() {
                   >
                     <FaGithub className="w-8 h-8" />
           </a>
-          <a
-                    href="https://linkedin.com/in/vatsal-goel3"
-            target="_blank"
-            rel="noopener noreferrer"
-                    className="p-4 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-all duration-300 hover:scale-110 hover:shadow-lg"
-                  >
-                    <FaLinkedin className="w-8 h-8" />
-                  </a>
                 </motion.div>
               </div>
 
@@ -456,8 +448,8 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
                   <p className="text-gray-300 mb-8">
-                    I'm always interested in hearing about new projects and opportunities. 
-                    Feel free to reach out if you'd like to connect!
+                    I&apos;m always interested in hearing about new projects and opportunities. 
+                    Feel free to reach out if you&apos;d like to connect!
                   </p>
                   
                   <div className="space-y-4">
@@ -479,16 +471,6 @@ export default function Home() {
                     >
                       <FaGithub className="w-5 h-5" />
                       GitHub
-                    </a>
-                    
-                    <a 
-                      href="https://linkedin.com/in/vatsal-goel3"
-          target="_blank"
-          rel="noopener noreferrer"
-                      className="flex items-center gap-3 text-gray-300 hover:text-emerald-400 transition-colors"
-                    >
-                      <FaLinkedin className="w-5 h-5" />
-                      LinkedIn
                     </a>
                   </div>
                 </div>
