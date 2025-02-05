@@ -234,7 +234,7 @@ export default function Home() {
   return (
     <main>
     {/* Hero Section - Light */}
-    <section className="relative min-h-screen flex flex-col items-center justify-center py-10 sm:py-20 overflow-hidden w-full">
+    <section className="relative min-h-screen flex flex-col items-center justify-center py-24 sm:py-32 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatePresence mode="wait">
           <motion.div 
@@ -248,9 +248,9 @@ export default function Home() {
           >
             <div className="flex-1 space-y-6 sm:space-y-10">
               
-              {/* Main Heading */}
+              {/* Main Heading - Adjusted Padding to Avoid Navbar Overlap */}
               <motion.div 
-                className="space-y-4 sm:space-y-6"
+                className="space-y-4 sm:space-y-6 pt-8 sm:pt-12"
                 initial={{ opacity: 0, y: isFirstLoad ? 20 : 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ 
@@ -269,9 +269,9 @@ export default function Home() {
                 </p>
               </motion.div>
               
-              {/* Bio */}
+              {/* Bio - Centered Properly */}
               <motion.p 
-                className="text-sm sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-[90%] sm:max-w-2xl tracking-wide px-4 sm:px-0"
+                className="text-sm sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl mx-auto sm:mx-0 tracking-wide"
                 initial={{ opacity: 0, y: isFirstLoad ? 20 : 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ 
@@ -289,7 +289,7 @@ export default function Home() {
                 </span>
               </motion.p>
 
-              {/* Social Links */}
+              {/* Social Links - Now Properly Centered */}
               <motion.div 
                 className="flex gap-6 pt-4 justify-center sm:justify-start"
                 initial={{ opacity: 0, y: isFirstLoad ? 20 : 0 }}
