@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaGithub, FaMapMarkerAlt, FaGlobe } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaMapMarkerAlt, FaGlobe, FaLinkedin } from 'react-icons/fa';
 import TerminalWindow from '@/components/TerminalWindow';
 import TerminalText from '@/components/TerminalText';
 
@@ -102,6 +102,17 @@ export default function ContactPage() {
                           <FaGithub className="w-5 h-5" />
                         </div>
                         GitHub
+                      </a>
+                      <a 
+                        href="https://www.linkedin.com/in/vatsalgoel/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 text-gray-300 hover:text-emerald-400 transition-colors group"
+                      >
+                        <div className="p-2 bg-gray-800 rounded-lg group-hover:bg-emerald-500/10 transition-colors">
+                          <FaLinkedin className="w-5 h-5" />
+                        </div>
+                        LinkedIn
                       </a>
                     </div>
                   </div>

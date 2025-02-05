@@ -4,7 +4,7 @@
 // import Link from "next/link";
 import { 
   FaGithub, FaCode, FaServer, FaTools,
-  FaPython, FaJava, FaJs, FaReact, FaAws, FaDocker 
+  FaPython, FaJava, FaJs, FaReact, FaAws, FaDocker, FaLinkedin
 } from "react-icons/fa";
 import { 
   SiCplusplus, SiGo, SiTensorflow, SiKubernetes, 
@@ -306,6 +306,15 @@ export default function Home() {
                   >
                     <FaGithub className="w-8 h-8" />
           </a>
+                  <a 
+                    href="https://www.linkedin.com/in/vatsalgoel/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 text-gray-300 hover:text-emerald-400 transition-colors"
+                  >
+                    <FaLinkedin className="w-5 h-5" />
+                    LinkedIn
+                  </a>
                 </motion.div>
               </div>
 
@@ -438,7 +447,7 @@ export default function Home() {
 
       {/* Contact Section */}
       <ScrollAnimation>
-        <section className="relative py-20 bg-gray-900 text-white">
+        <section className="relative py-10 bg-gray-900 text-white">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_2px,transparent_1px),linear-gradient(to_bottom,#ffffff05_2px,transparent_1px)] bg-[size:24px_24px] bg-fixed" />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <TerminalWindow title="contact.sh">
@@ -446,7 +455,7 @@ export default function Home() {
                 text="echo 'Let's connect!'" 
                 className="mb-6"
               />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                 <div>
                   <p className="text-gray-300 mb-8">
                     I&apos;m always interested in hearing about new projects and opportunities. 
