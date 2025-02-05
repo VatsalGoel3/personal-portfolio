@@ -234,11 +234,11 @@ export default function Home() {
   return (
     <main>
       {/* Hero Section - Light */}
-      <section className="relative min-h-screen flex items-center py-20 overflow-hidden">
+      <section className="relative min-h-screen flex items-center py-20 overflow-hidden w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatePresence mode="wait">
             <motion.div 
-              className="flex flex-col md:flex-row items-center gap-20"
+              className="flex flex-col md:flex-row items-center gap-10 px-4 sm:px-6 lg:px-8"              
               initial={{ opacity: 0, y: isFirstLoad ? 0 : 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ 
@@ -257,7 +257,7 @@ export default function Home() {
                     delay: isFirstLoad ? 0.4 : 0.2 
                   }}
                 >
-                  <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 tracking-tight">
+                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight text-center sm:text-left">
                     Vatsal Goel
                     <span className="block text-emerald-600 mt-6">
                       Software Engineer
@@ -290,7 +290,7 @@ export default function Home() {
 
                 {/* Social Links */}
                 <motion.div 
-                  className="flex gap-8 pt-4"
+                  className="flex gap-6 pt-4 justify-center sm:justify-start"                  
                   initial={{ opacity: 0, y: isFirstLoad ? 20 : 0 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ 
@@ -329,8 +329,8 @@ export default function Home() {
               >
                 <div className="relative transform hover:scale-105 transition-transform duration-300">
                   <div className="absolute inset-0 bg-emerald-500 rounded-full blur-2xl opacity-20"></div>
-                  <ProfileImage className="relative w-96 h-96" />
-                </div>
+                  <ProfileImage className="relative w-72 h-72 sm:w-96 sm:h-96" />
+                  </div>
               </motion.div>
             </motion.div>
           </AnimatePresence>
