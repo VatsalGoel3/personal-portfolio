@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { FaEnvelope, FaGithub, FaMapMarkerAlt, FaGlobe, FaLinkedin } from 'react-icons/fa';
 import TerminalWindow from '@/components/TerminalWindow';
 import TerminalText from '@/components/TerminalText';
+import Link from 'next/link';
 
 export default function ContactPage() {
   const [mounted, setMounted] = useState(false);
@@ -81,17 +82,12 @@ export default function ContactPage() {
                   <div>
                     <h2 className="text-xl font-bold text-emerald-400 mb-4">Social Links</h2>
                     <div className="space-y-4">
-                      <a 
-                        href="http://localhost:3000"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-3 text-gray-300 hover:text-emerald-400 transition-colors group"
-                      >
+                      <Link href="/" className='flex items-center gap-3 text-gray-300 hover:text-emerald-400 transition-colors group'>
                         <div className="p-2 bg-gray-800 rounded-lg group-hover:bg-emerald-500/10 transition-colors">
                           <FaGlobe className="w-5 h-5" />
                         </div>
                         Portfolio Website
-                      </a>
+                      </Link>
                       <a 
                         href="https://github.com/VatsalGoel3"
                         target="_blank"
@@ -104,7 +100,7 @@ export default function ContactPage() {
                         GitHub
                       </a>
                       <a 
-                        href="https://www.linkedin.com/in/vatsalgoel/"
+                        href="https://www.linkedin.com/in/vatsal-goel3/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-3 text-gray-300 hover:text-emerald-400 transition-colors group"
