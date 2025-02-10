@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Moved outside the component to ensure it is constant
 const LOADING_LINES = [
   'INITIALIZING CLOUD PROTOCOLS...',
   'SECURING PERIMETER WITH KUBERNETES...',

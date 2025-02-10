@@ -28,7 +28,7 @@ export default function ClientLayout({
     // Hide loading screen after 3 seconds maximum
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000); // Changed from 5000 to 3000
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);

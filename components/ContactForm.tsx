@@ -15,8 +15,7 @@ export default function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Here you would typically send the form data to your backend
-    // For now, we'll just simulate a submission
+    // Currently, simulating a submission, Future: Send to backend
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     // Reset form

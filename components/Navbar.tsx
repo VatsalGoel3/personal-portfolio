@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-// import Image from 'next/image';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import NavLogo from './NavLogo';
+import { logEvent } from 'firebase/analytics';
+import { getFirebaseAnalytics } from '@/utils/firebase';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,6 +18,16 @@ export default function Navbar() {
     }, 100);
     return () => clearTimeout(timer);
   }, []);
+
+  // Handler for logging a resume click event
+  const handleResumeClick = async () => {
+    const analytics = await getFirebaseAnalytics();
+    if (analytics) {
+      logEvent(analytics, "resume_click", {
+        page_path: window.location.pathname,
+      });
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-200">
@@ -49,6 +60,7 @@ export default function Navbar() {
               className="px-5 py-2.5 rounded-full bg-emerald-600 text-lg font-semibold text-white hover:bg-emerald-700 transition-colors"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleResumeClick}
             >
               Resume
             </a>
@@ -98,7 +110,10 @@ export default function Navbar() {
               className="block px-3 py-2 text-lg font-semibold text-emerald-500 hover:text-emerald-400"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => {
+                setIsMenuOpen(false);
+                handleResumeClick();
+              }}
             >
               Resume
             </a>
@@ -107,4 +122,4 @@ export default function Navbar() {
       )}
     </nav>
   );
-} 
+}

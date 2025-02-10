@@ -39,7 +39,6 @@ export default function ContactPage() {
               viewport={{ once: true }}
               className="text-center mb-6"
             >
-              {/* Changed "Let's Connect" to escape the apostrophe */}
               <h1 className="text-4xl font-bold text-white mb-3">Let&apos;s Connect</h1>
               <p className="text-gray-400 text-lg">
                 I&apos;m always open to new opportunities and interesting projects
