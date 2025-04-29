@@ -55,6 +55,18 @@ const experiences = [
     tech: ["Python", "AWS", "Data Processing", "Bash", "Automation", "API Integration"]
   },
   {
+    title: "Graduate Teaching Assistant – CPS & IoT Security",
+    company: "University of Utah",
+    date: "Aug 2024 – Dec 2024",
+    location: "Remote",
+    description: [
+      "Delivered technical instruction and lab support to 20+ graduate students, simplifying complex Cyber-Physical Systems (CPS) and IoT security topics",
+      "Facilitated weekly hands-on labs and discussions, boosting lab completion rates by 40% through real-world CPS attack simulations",
+      "Mentored 6+ student teams on capstone project execution, ensuring 100% on-time project delivery and improving collaboration skills"
+    ],
+    tech: ["Python", "Bash", "Automation", "Teaching", "Cybersecurity", "IoT"]
+  },
+  {
     title: "Software Engineer – Full Stack",
     company: "XGRO Technologies",
     date: "Oct 2021 – Oct 2022",

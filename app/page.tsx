@@ -46,28 +46,28 @@ const skills = {
 
 const featuredProjects = [
   {
+    title: "AWS Powertools (TypeScript)",
+    description: "Open-source contributions to AWS Powertools for Lambda (TypeScript), including JSON Schema validation, @validator decorator, and Middy.js middleware integration. Featured in 3+ AWS release notes.",
+    image: "/projects/aws-powertools-ts.png",
+    githubUrl: "https://github.com/awslabs/aws-lambda-powertools-typescript",
+    tags: [
+      { name: "TypeScript", icon: "TypeScript" as IconName },
+      { name: "AWS", icon: "AWS" as IconName },
+      { name: "Middy.js", icon: "Middleware" as IconName },
+      { name: "Validation", icon: "Validation" as IconName }
+    ]
+  },
+  {
     title: "CineMatch",
     description: "Movie recommendation system using collaborative filtering and sentiment analysis to provide personalized movie suggestions.",
     image: "/projects/cinematch.jpg",
     githubUrl: "https://github.com/VatsalGoel3/CineMatch",
     tags: [
-      { name: "Flask", icon: "Flask" as IconName},
-      { name: "React", icon: "React" as IconName},
-      { name: "MySQL", icon: "MySQL" as IconName},
-      { name: "Python", icon: "Python" as IconName},
-      { name: "Machine Learning", icon: "Machine Learning" as IconName}
-    ]
-  },
-  {
-    title: "DNS Server",
-    description: "Custom DNS server implementation with recursive query support and optimized caching, handling 5K queries per second.",
-    image: "/projects/dns-server.jpg",
-    githubUrl: "https://github.com/VatsalGoel3/dns-server-python",
-    tags: [
+      { name: "Flask", icon: "Flask" as IconName },
+      { name: "React", icon: "React" as IconName },
+      { name: "MySQL", icon: "MySQL" as IconName },
       { name: "Python", icon: "Python" as IconName },
-      { name: "Networking", icon: "Networking" as IconName },
-      { name: "RFC Standards", icon: "RFC" as IconName },
-      { name: "Caching", icon: "Caching" as IconName }
+      { name: "Machine Learning", icon: "Machine Learning" as IconName }
     ]
   },
   {
@@ -78,8 +78,7 @@ const featuredProjects = [
       { name: "Go", icon: "Go" as IconName },
       { name: "Distributed Systems", icon: "Distributed Systems" as IconName },
       { name: "Raft", icon: "Raft" as IconName },
-      { name: "Consensus", icon: "Consensus" as IconName },
-      { name: "Fault Tolerance", icon: "Server" as IconName }
+      { name: "Consensus", icon: "Consensus" as IconName }
     ]
   }
 ];

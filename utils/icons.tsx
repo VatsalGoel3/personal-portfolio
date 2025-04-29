@@ -1,26 +1,59 @@
 import { 
-  FaGithub, FaLinkedin, FaCode, FaServer, FaTools,
-  FaPython, FaJava, FaJs, FaReact, FaAws, FaDocker 
-} from "react-icons/fa";
+  FaCode, FaServer, FaDatabase, FaCogs, 
+  FaNetworkWired, FaBook, FaLayerGroup, FaGlobe, FaAws
+} from 'react-icons/fa';
 import { 
-  SiCplusplus, SiGo, SiTensorflow, SiKubernetes, 
-  SiTerraform, SiFlask, SiExpress, SiMysql, SiRedis
-} from "react-icons/si";
+  SiFlask, SiReact, SiMysql, SiPython, 
+  SiGo, SiDocker, SiKubernetes, SiTerraform,
+  SiJavascript, SiCss3, SiHtml5, SiPydantic
+} from 'react-icons/si';
+import { IconType } from 'react-icons';
 
-export const IconMap = {
+export type IconName =
+  | "Flask"
+  | "React"
+  | "MySQL"
+  | "Python"
+  | "Machine Learning"
+  | "Networking"
+  | "RFC"
+  | "Caching"
+  | "API"
+  | "CSS"
+  | "HTML"
+  | "Go"
+  | "Distributed Systems"
+  | "Raft"
+  | "Consensus"
+  | "Server"
+  | "AWS"
+  | "AppSync"
+  | "WebSocket"
+  | "Middleware"
+  | "Validation"
+  | "Pydantic";
+
+export const IconMap: Record<IconName, IconType> = {
   Flask: SiFlask,
-  React: FaReact,
+  React: SiReact,
   MySQL: SiMysql,
-  Python: FaPython,
-  ML: SiTensorflow,
+  Python: SiPython,
+  "Machine Learning": FaDatabase,
   Networking: FaServer,
   RFC: FaCode,
-  Caching: SiRedis,
+  Caching: FaLayerGroup,
+  API: FaGlobe,
+  CSS: SiCss3,
+  HTML: SiHtml5,
   Go: SiGo,
   "Distributed Systems": FaServer,
-  Raft: FaCode,
+  Raft: FaCogs,
   Consensus: FaCode,
-  "Machine Learning": SiTensorflow
+  Server: FaServer,
+  AWS: FaAws,
+  AppSync: FaNetworkWired,       // using a network wire icon for AppSync
+  WebSocket: FaNetworkWired,     // can use same FaNetworkWired or custom later
+  Middleware: FaCogs,            // Cogs for Middleware (Processing)
+  Validation: FaBook,            // Book to represent Validation/Rules
+  Pydantic: SiPydantic           // if you have SiPydantic available
 };
-
-export type IconName = keyof typeof IconMap; 
