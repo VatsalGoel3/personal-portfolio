@@ -30,8 +30,6 @@ const projects: Project[] = [
     githubUrl: "https://github.com/awslabs/aws-lambda-powertools-typescript",
     category: "Open Source",
     tags: [
-      { name: "TypeScript", icon: "TypeScript" },
-      { name: "Node.js", icon: "NodeJS" },
       { name: "AWS", icon: "AWS" },
       { name: "Middy.js", icon: "Middleware" },
       { name: "Schema Validation", icon: "Validation" }
@@ -87,7 +85,6 @@ const projects: Project[] = [
     tags: [
       { name: "React", icon: "React" },
       { name: "API Integration", icon: "API" },
-      { name: "JavaScript", icon: "JavaScript" },
       { name: "CSS", icon: "CSS" }
     ],
     referenceUrl: "https://vt-reactjs-cosmos-daily.netlify.app"
@@ -113,7 +110,6 @@ const projects: Project[] = [
     category: "Web Development",
     tags: [
       { name: "React", icon: "React" },
-      { name: "JavaScript", icon: "JavaScript" },
       { name: "CSS", icon: "CSS" },
       { name: "HTML", icon: "HTML" }
     ],
