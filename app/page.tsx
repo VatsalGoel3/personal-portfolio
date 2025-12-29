@@ -5,8 +5,8 @@ import {
   FaPython, FaJava, FaJs, FaReact, FaAws, FaDocker, FaLinkedin
 } from "react-icons/fa";
 import { 
-  SiCplusplus, SiGo, SiTensorflow, SiKubernetes, 
-  SiTerraform, SiFlask, SiExpress, SiMysql 
+  SiTypescript, SiGo, SiKubernetes, 
+  SiTerraform, SiFlask, SiMysql, SiFastapi, SiPydantic, SiC
 } from "react-icons/si";
 import ProjectCard from '@/components/ProjectCard';
 import ContactForm from '@/components/ContactForm';
@@ -20,19 +20,19 @@ import { IconName } from "@/utils/icons";
 
 const skills = {
   languages: [
-    { name: "C/C++", icon: SiCplusplus, level: "Advanced" },
     { name: "Python", icon: FaPython, level: "Advanced" },
-    { name: "JavaScript", icon: FaJs, level: "Intermediate" },
+    { name: "TypeScript", icon: SiTypescript, level: "Advanced" },
     { name: "Java", icon: FaJava, level: "Intermediate" },
     { name: "SQL", icon: SiMysql, level: "Intermediate" },
-    { name: "Go", icon: SiGo, level: "Familiar" }
+    { name: "Go", icon: SiGo, level: "Intermediate" },
+    { name: "C", icon: SiC, level: "Intermediate" }
   ],
   frameworks: [
     { name: "Flask", icon: SiFlask, level: "Advanced" },
+    { name: "FastAPI", icon: SiFastapi, level: "Advanced" },
     { name: "Node.js", icon: FaJs, level: "Advanced" },
-    { name: "Express.js", icon: SiExpress, level: "Advanced" },
     { name: "React", icon: FaReact, level: "Intermediate" },
-    { name: "TensorFlow", icon: SiTensorflow, level: "Intermediate" }
+    { name: "Pydantic", icon: SiPydantic, level: "Advanced" }
   ],
   tools: [
     { name: "AWS", icon: FaAws, level: "Advanced" },
@@ -40,7 +40,7 @@ const skills = {
     { name: "Kubernetes", icon: SiKubernetes, level: "Intermediate" },
     { name: "Terraform", icon: SiTerraform, level: "Intermediate" },
     { name: "Git", icon: FaGithub, level: "Advanced" },
-    { name: "Bash", icon: FaCode, level: "Advanced" }
+    { name: "CI/CD", icon: FaCode, level: "Advanced" }
   ]
 };
 
@@ -144,12 +144,12 @@ export default function Home() {
                   delay: isFirstLoad ? 0.6 : 0.4 
                 }}
               >
-                Hi, I&apos;m Vatsal Goel, a Software Engineer passionate about building scalable cloud systems, 
-                securing data, and driving automation. With experience in software development, cybersecurity, 
+                Hi, I&apos;m Vatsal Goel, a Founding Engineer at i4 Ops, passionate about building scalable cloud systems, 
+                securing enterprise data, and driving automation. With experience in software development, cybersecurity, 
                 and cloud computing, I specialize in crafting efficient, high-performance solutions. 
                 <span className="block mt-3 sm:mt-4">
-                  Currently pursuing my Master&apos;s in Computer Science at the University of Utah, 
-                  I&apos;ve worked on projects ranging from automation workflows to large-scale distributed systems. 
+                  With my Master&apos;s in Computer Science from the University of Utah, 
+                  I&apos;ve worked on projects ranging from real-time infrastructure monitoring to large-scale distributed systems. 
                   Let&apos;s connect and build something impactful!
                 </span>
               </motion.p>

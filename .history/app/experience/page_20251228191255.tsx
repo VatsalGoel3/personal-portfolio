@@ -4,8 +4,8 @@ import ScrollAnimation from '@/components/ScrollAnimation';
 import TerminalWindow from '@/components/TerminalWindow';
 import TerminalText from '@/components/TerminalText';
 import { motion } from 'framer-motion';
-import { FaAws, FaPython, FaReact, FaDocker, FaGithub, FaMapMarkerAlt, FaCalendarAlt, FaJava, FaDatabase, FaUsers, FaVideo, FaProjectDiagram, FaTerminal, FaCogs, FaPlug, FaBolt, FaPaintBrush, FaCubes, FaShieldAlt } from 'react-icons/fa';
-import { SiKubernetes, SiPostgresql, SiNodedotjs, SiSpringboot, SiMysql, SiRedis, SiTensorflow, SiAdobecreativecloud, SiTerraform } from 'react-icons/si';
+import { FaAws, FaPython, FaReact, FaDocker, FaGithub, FaMapMarkerAlt, FaCalendarAlt, FaJava, FaDatabase, FaUsers, FaVideo, FaProjectDiagram, FaTerminal, FaCogs, FaPlug, FaBolt, FaPaintBrush, FaCubes } from 'react-icons/fa';
+import { SiKubernetes, SiPostgresql, SiNodedotjs, SiSpringboot, SiMysql, SiRedis, SiTensorflow, SiAdobecreativecloud } from 'react-icons/si';
 
 // Map of technology names to their icons
 const techIcons = {
@@ -39,8 +39,6 @@ const techIcons = {
   "React.js": FaReact,
   "REST APIs": FaDatabase,
   "Adobe Creative Cloud": SiAdobecreativecloud,
-  "Terraform": SiTerraform,
-  "Security": FaShieldAlt,
 };
 
 const experiences = [

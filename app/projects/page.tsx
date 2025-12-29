@@ -65,14 +65,13 @@ const projects: Project[] = [
   },
   {
     title: "DNS Server",
-    description: "Custom DNS server implementation with recursive query support and optimized caching, handling 5K queries per second.",
+    description: "Built a recursive DNS resolver supporting AAAA & CNAME queries with 98% resolution accuracy. Improved response time by 35% using an in-memory LRU cache and optimized query delegation across DNS hierarchy.",
     image: "/projects/dns-server.jpg",
     githubUrl: "https://github.com/VatsalGoel3/dns-server-python",
     category: "System Design",
     tags: [
       { name: "Python", icon: "Python" },
-      { name: "Networking", icon: "Networking" },
-      { name: "RFC Standards", icon: "RFC" },
+      { name: "Socket Programming", icon: "Networking" },
       { name: "Caching", icon: "Caching" }
     ]
   },

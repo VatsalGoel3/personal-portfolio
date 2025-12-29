@@ -39,8 +39,6 @@ const techIcons = {
   "React.js": FaReact,
   "REST APIs": FaDatabase,
   "Adobe Creative Cloud": SiAdobecreativecloud,
-  "Terraform": SiTerraform,
-  "Security": FaShieldAlt,
 };
 
 const experiences = [
