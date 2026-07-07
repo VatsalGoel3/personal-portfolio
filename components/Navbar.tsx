@@ -69,12 +69,15 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             className={`sm:hidden p-2 transition-opacity duration-300 ${mounted ? 'opacity-100' : 'opacity-0'}`}
+            aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
-              <FaTimes className="h-6 w-6" />
+              <FaTimes className="h-6 w-6" aria-hidden="true" />
             ) : (
-              <FaBars className="h-6 w-6" />
+              <FaBars className="h-6 w-6" aria-hidden="true" />
             )}
           </button>
         </div>
@@ -82,7 +85,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="sm:hidden bg-gray-900 border-t border-gray-800">
+        <div id="mobile-navigation" className="sm:hidden bg-gray-900 border-t border-gray-800">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link
               href="/projects"

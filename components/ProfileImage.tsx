@@ -14,6 +14,7 @@ export default function ProfileImage({ className = "w-96 h-96" }: ProfileImagePr
         alt="Vatsal Goel"
         fill
         className="rounded-full object-cover shadow-2xl"
+        sizes="(max-width: 640px) 16rem, (max-width: 1024px) 24rem, 28rem"
         priority
       />
     </div>

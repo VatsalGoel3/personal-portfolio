@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Digital preservation automation</title>
+  <desc id="desc">Validation workflow for archival records with automated schema checks.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#101827"/>
+      <stop offset="55%" stop-color="#18243a"/>
+      <stop offset="100%" stop-color="#0b3b34"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <g opacity=".16" stroke="#cbd5e1">
+    <path d="M0 120h1200M0 240h1200M0 360h1200M0 480h1200M0 600h1200"/>
+    <path d="M120 0v720M240 0v720M360 0v720M480 0v720M600 0v720M720 0v720M840 0v720M960 0v720M1080 0v720"/>
+  </g>
+  <g fill="#e2e8f0" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
+    <text x="80" y="108" font-size="46" font-weight="800">Digital Preservation Automation</text>
+    <text x="82" y="158" font-size="24" fill="#cbd5e1">Python validation • metadata extraction • archival ingest quality</text>
+  </g>
+  <g transform="translate(104 240)">
+    <rect width="272" height="330" rx="18" fill="#0f172a" stroke="#334155"/>
+    <rect x="34" y="48" width="204" height="28" rx="6" fill="#334155"/>
+    <rect x="34" y="104" width="176" height="18" rx="5" fill="#64748b"/>
+    <rect x="34" y="148" width="204" height="18" rx="5" fill="#64748b"/>
+    <rect x="34" y="192" width="154" height="18" rx="5" fill="#64748b"/>
+    <rect x="34" y="236" width="204" height="18" rx="5" fill="#22c55e" opacity=".85"/>
+  </g>
+  <g transform="translate(464 230)">
+    <rect width="300" height="350" rx="20" fill="#0b1220" stroke="#22c55e" stroke-width="4"/>
+    <text x="34" y="70" fill="#86efac" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="24">validate.py</text>
+    <text x="34" y="128" fill="#cbd5e1" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22">records: 1M+</text>
+    <text x="34" y="174" fill="#cbd5e1" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22">accuracy: 99.9%</text>
+    <text x="34" y="220" fill="#cbd5e1" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22">manual: -70%</text>
+    <path d="M74 286l48 48 104-122" fill="none" stroke="url(#accent)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(842 260)">
+    <rect width="260" height="286" rx="18" fill="#0f172a" stroke="#334155"/>
+    <circle cx="70" cy="78" r="24" fill="#22c55e"/>
+    <rect x="112" y="62" width="102" height="16" rx="5" fill="#64748b"/>
+    <rect x="112" y="94" width="78" height="16" rx="5" fill="#64748b"/>
+    <circle cx="70" cy="150" r="24" fill="#38bdf8"/>
+    <rect x="112" y="134" width="108" height="16" rx="5" fill="#64748b"/>
+    <rect x="112" y="166" width="92" height="16" rx="5" fill="#64748b"/>
+    <circle cx="70" cy="222" r="24" fill="#f59e0b"/>
+    <rect x="112" y="206" width="96" height="16" rx="5" fill="#64748b"/>
+    <rect x="112" y="238" width="118" height="16" rx="5" fill="#64748b"/>
+  </g>
+  <path d="M376 405h88M764 405h78" stroke="#22c55e" stroke-width="8" stroke-linecap="round"/>
+</svg>

@@ -11,14 +11,14 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-// Initialize Firebase app
-const app = initializeApp(firebaseConfig);
+const hasFirebaseConfig = Object.values(firebaseConfig).every(Boolean);
+const app = hasFirebaseConfig ? initializeApp(firebaseConfig) : null;
 
 /**
  * Returns the Firebase Analytics instance if supported, or null otherwise.
  */
 export const getFirebaseAnalytics = async () => {
-  if (typeof window !== "undefined" && (await isSupported())) {
+  if (app && typeof window !== "undefined" && (await isSupported())) {
     return getAnalytics(app);
   }
   return null;

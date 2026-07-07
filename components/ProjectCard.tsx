@@ -13,6 +13,7 @@ interface ProjectCardProps {
   title: string;
   description: string;
   image: string;
+  href?: string;
   category?: string;
   tags: ProjectTag[];
 }
@@ -21,26 +22,27 @@ export default function ProjectCard({
   title,
   description,
   image,
+  href,
   tags,
 }: ProjectCardProps) {
   return (
     (<Link
-      href={`/projects#${title.toLowerCase().replace(/\s+/g, '-')}`}
+      href={href ?? `/projects#${title.toLowerCase().replace(/\s+/g, '-')}`}
       className="group relative block bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700/50 hover:border-emerald-500/50 transition-all duration-300 h-full flex flex-col">
 
       {/* Image Container */}
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative h-48 overflow-hidden bg-gray-900">
         <Image
           src={image}
           alt={title}
           fill
-          className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
+          className="object-contain object-center group-hover:scale-105 transition-transform duration-300"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           priority
           quality={95}
           onError={(e) => {
             const target = e.target as HTMLImageElement;
-            target.src = "/projects/placeholder.jpg";
+            target.src = "/projects/placeholder.svg";
           }}
         />
       </div>
@@ -62,7 +64,7 @@ export default function ProjectCard({
                 key={tag.name}
                 className="flex items-center gap-1.5 px-3 py-1 text-sm bg-emerald-500/10 text-emerald-400 rounded-full"
               >
-                {Icon && <Icon className="w-3.5 h-3.5" />}
+                {Icon && <Icon className="w-3.5 h-3.5" aria-hidden="true" />}
                 {tag.name}
               </span>
             );

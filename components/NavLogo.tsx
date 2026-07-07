@@ -41,9 +41,9 @@ export default function NavLogo() {
   };
 
   return (
-    (<Link href="/" onClick={handleClick} legacyBehavior>
+    (<Link href="/" onClick={handleClick} className="relative group block">
       <motion.div
-        className="relative group cursor-pointer"
+        className="relative cursor-pointer"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >

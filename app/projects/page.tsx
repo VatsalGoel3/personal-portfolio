@@ -16,6 +16,7 @@ interface Project {
   title: string;
   description: string;
   image: string;
+  caseStudyUrl?: string;
   githubUrl?: string;
   category: string;
   tags: ProjectTag[];
@@ -24,8 +25,35 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "i4 Ops Infrastructure Security",
+    description: "Founding-engineer work on zero-exfiltration infrastructure security for AI-era data risk. This portfolio intentionally keeps company architecture, customer context, and operational details private.",
+    image: "/projects/i4-zero-exfiltration.svg",
+    caseStudyUrl: "/projects/i4-ops-infrastructure-security",
+    category: "Cybersecurity Infrastructure",
+    tags: [
+      { name: "Go", icon: "Go" },
+      { name: "Python", icon: "Python" },
+      { name: "Security", icon: "Security" },
+      { name: "AWS", icon: "AWS" }
+    ]
+  },
+  {
+    title: "Dynamic Queue Adaptation",
+    description: "Offline Python prototype for intent-aware music recommendation. It tests whether manual queue insertions can improve short-term ranking versus a static seed-only baseline, with deterministic artifacts and evaluation plots committed for reproducibility.",
+    image: "/projects/dynamic-queue-adaptation.svg",
+    caseStudyUrl: "/projects/dynamic-queue-adaptation",
+    githubUrl: "https://github.com/VatsalGoel3/dynamic-queue-adaptation",
+    category: "Recommender Systems",
+    tags: [
+      { name: "Python", icon: "Python" },
+      { name: "Machine Learning", icon: "Machine Learning" },
+      { name: "Ranking", icon: "AI" },
+      { name: "Validation", icon: "Validation" }
+    ]
+  },
+  {
     title: "AWS Powertools (TypeScript)",
-    description: "Open-source contributions to AWS Powertools for Lambda (TypeScript), including JSON Schema validation, @validator decorator, and Middy.js middleware integration. Featured in 3+ AWS release notes.",
+    description: "Implemented JSON Schema validation utilities including a @validator decorator, recognized as a major contributor across 3+ public releases through review with AWS maintainers.",
     image: "/projects/aws-powertools-ts.png",
     githubUrl: "https://github.com/awslabs/aws-lambda-powertools-typescript",
     category: "Open Source",
@@ -37,7 +65,7 @@ const projects: Project[] = [
   },
   {
     title: "AWS Powertools (Python)",
-    description: "Contributed schema support and recursive data masking for AppSync and WebSocket events using Pydantic. Ensured 100% unit test coverage and improved developer documentation.",
+    description: "Delivered 4+ production-ready schema utilities including AppSync/WebSocket event parsing and recursive DataMasking with 100% test coverage across 40+ unit tests.",
     image: "/projects/aws-powertools-py.png",
     githubUrl: "https://github.com/awslabs/aws-lambda-powertools-python",
     category: "Open Source",
@@ -50,17 +78,29 @@ const projects: Project[] = [
     ]
   },
   {
-    title: "CineMatch",
-    description: "Movie recommendation system using collaborative filtering and sentiment analysis to provide personalized movie suggestions.",
-    image: "/projects/cinematch.jpg",
-    githubUrl: "https://github.com/VatsalGoel3/CineMatch",
-    category: "Machine Learning",
+    title: "OpenTelemetry Go SDK",
+    description: "CNCF OpenTelemetry Go work focused on distributed tracing and production observability patterns in public open-source telemetry infrastructure.",
+    image: "/projects/opentelemetry-go.svg",
+    caseStudyUrl: "/projects/opentelemetry-go-sdk",
+    githubUrl: "https://github.com/open-telemetry/opentelemetry-go",
+    category: "Open Source",
     tags: [
-      { name: "Flask", icon: "Flask" },
-      { name: "React", icon: "React" },
-      { name: "MySQL", icon: "MySQL" },
+      { name: "Go", icon: "Go" },
+      { name: "OpenTelemetry", icon: "OpenTelemetry" },
+      { name: "Distributed Tracing", icon: "Tracing" },
+      { name: "CNCF", icon: "Server" }
+    ]
+  },
+  {
+    title: "Digital Preservation Automation",
+    description: "University of Utah data engineering workflows that reduced manual verification by 70% while maintaining 99.9% accuracy across 1M+ archival records through Python and Bash validation pipelines.",
+    image: "/projects/digital-preservation.svg",
+    category: "Data Engineering",
+    tags: [
       { name: "Python", icon: "Python" },
-      { name: "Machine Learning", icon: "Machine Learning" }
+      { name: "Automation", icon: "Automation" },
+      { name: "Data Processing", icon: "Machine Learning" },
+      { name: "Validation", icon: "Validation" }
     ]
   },
   {
@@ -76,21 +116,8 @@ const projects: Project[] = [
     ]
   },
   {
-    title: "Cosmos Daily",
-    description: "ReactJS web app integrating NASA's API to showcase daily astronomical images and celestial events.",
-    image: "/projects/reactjs-nasa-api-app.jpg",
-    githubUrl: "https://github.com/VatsalGoel3/reactjs-nasa-api-app",
-    category: "Web Development",
-    tags: [
-      { name: "React", icon: "React" },
-      { name: "API Integration", icon: "API" },
-      { name: "CSS", icon: "CSS" }
-    ],
-    referenceUrl: "https://vt-reactjs-cosmos-daily.netlify.app"
-  },
-  {
     title: "Raft Key-Value Store",
-    description: "Distributed key-value store using Raft consensus protocol for fault tolerance and consistent data replication.",
+    description: "Built fault-tolerant distributed key-value store using Raft consensus, including leader election, log replication, and state-machine execution that resolved 95% of partition scenarios.",
     image: "/projects/raft-kv.jpg",
     category: "System Design",
     referenceUrl: "https://pdos.csail.mit.edu/6.824/papers/raft-extended.pdf",
@@ -100,19 +127,6 @@ const projects: Project[] = [
       { name: "Raft", icon: "Raft" },
       { name: "Consensus", icon: "Consensus" }
     ]
-  },
-  {
-    title: "To-Do List",
-    description: "Simple and functional to-do list built with ReactJS, exploring essential features of a task manager and React core capabilities.",
-    image: "/projects/reactjs-todolist.jpg",
-    githubUrl: "https://github.com/VatsalGoel3/reactjs-todolist",
-    category: "Web Development",
-    tags: [
-      { name: "React", icon: "React" },
-      { name: "CSS", icon: "CSS" },
-      { name: "HTML", icon: "HTML" }
-    ],
-    referenceUrl: "https://vt-reactjs-todolist.netlify.app"
   }
 ];
 
@@ -137,7 +151,7 @@ export default function ProjectsPage() {
 
           {/* Projects Grid */}
           <div className="grid grid-cols-1 gap-8">
-            <AnimatePresence mode="wait">
+            <AnimatePresence>
               {projects.map((project, index) => (
                 <motion.div key={project.title} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.5, delay: index * 0.1 }}>
                   <TerminalWindow title={`${project.title.toLowerCase()}.sh`} id={project.title.toLowerCase().replace(/\s+/g, '-')}> 
@@ -151,13 +165,13 @@ export default function ProjectsPage() {
                             src={project.image}
                             alt={project.title}
                             fill
-                            className="object-cover object-center hover:scale-105 transition-transform duration-300"
+                            className="object-contain object-center hover:scale-105 transition-transform duration-300"
                             sizes="(max-width: 768px) 100vw, 50vw"
                             priority
                             quality={95}
                             onError={(e) => {
                               const target = e.target as HTMLImageElement;
-                              target.src = "/projects/placeholder.jpg";
+                              target.src = "/projects/placeholder.svg";
                             }}
                           />
                         </div>
@@ -173,7 +187,7 @@ export default function ProjectsPage() {
                               const Icon = IconMap[tag.icon];
                               return (
                                 <span key={tag.name} className="flex items-center gap-1.5 px-3 py-1 text-sm bg-emerald-500/10 text-emerald-400 rounded-full">
-                                  {Icon && <Icon className="w-3.5 h-3.5" />}
+                                  {Icon && <Icon className="w-3.5 h-3.5" aria-hidden="true" />}
                                   {tag.name}
                                 </span>
                               );
@@ -182,9 +196,15 @@ export default function ProjectsPage() {
 
                           {/* Links */}
                           <div className="flex flex-wrap gap-4">
+                            {project.caseStudyUrl && (
+                              <a href={project.caseStudyUrl} className="inline-flex items-center gap-2 text-gray-400 hover:text-emerald-400 transition-colors">
+                                <FaBook className="w-5 h-5" aria-hidden="true" />
+                                Read Case Study
+                              </a>
+                            )}
                             {project.githubUrl && (
                               <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-gray-400 hover:text-emerald-400 transition-colors">
-                                <FaGithub className="w-5 h-5" />
+                                <FaGithub className="w-5 h-5" aria-hidden="true" />
                                 View on GitHub
                               </a>
                             )}
@@ -192,12 +212,12 @@ export default function ProjectsPage() {
                               <a href={project.referenceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-gray-400 hover:text-emerald-400 transition-colors">
                                 {project.title.includes("Raft") ? (
                                   <>
-                                    <FaBook className="w-5 h-5" />
+                                    <FaBook className="w-5 h-5" aria-hidden="true" />
                                     View Reference Paper
                                   </>
                                 ) : (
                                   <>
-                                    <FaGlobe className="w-5 h-5" />
+                                    <FaGlobe className="w-5 h-5" aria-hidden="true" />
                                     View Live Demo
                                   </>
                                 )}

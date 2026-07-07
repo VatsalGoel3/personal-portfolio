@@ -4,8 +4,8 @@ import ScrollAnimation from '@/components/ScrollAnimation';
 import TerminalWindow from '@/components/TerminalWindow';
 import TerminalText from '@/components/TerminalText';
 import { motion } from 'framer-motion';
-import { FaAws, FaPython, FaReact, FaDocker, FaGithub, FaMapMarkerAlt, FaCalendarAlt, FaJava, FaDatabase, FaUsers, FaVideo, FaProjectDiagram, FaTerminal, FaCogs, FaPlug, FaBolt, FaPaintBrush, FaCubes, FaShieldAlt } from 'react-icons/fa';
-import { SiKubernetes, SiPostgresql, SiNodedotjs, SiSpringboot, SiMysql, SiRedis, SiTensorflow, SiAdobecreativecloud, SiTerraform } from 'react-icons/si';
+import { FaAws, FaPython, FaReact, FaDocker, FaGithub, FaMapMarkerAlt, FaCalendarAlt, FaJava, FaDatabase, FaUsers, FaVideo, FaProjectDiagram, FaTerminal, FaCogs, FaPlug, FaBolt, FaPaintBrush, FaCubes, FaShieldAlt, FaNetworkWired } from 'react-icons/fa';
+import { SiKubernetes, SiPostgresql, SiNodedotjs, SiSpringboot, SiMysql, SiRedis, SiTensorflow, SiAdobecreativecloud, SiTerraform, SiGo } from 'react-icons/si';
 
 // Map of technology names to their icons
 const techIcons = {
@@ -41,6 +41,12 @@ const techIcons = {
   "Adobe Creative Cloud": SiAdobecreativecloud,
   "Terraform": SiTerraform,
   "Security": FaShieldAlt,
+  "Go": SiGo,
+  "Infrastructure Security": FaShieldAlt,
+  "Cloud Systems": FaAws,
+  "AI Risk Scoring": SiTensorflow,
+  "Observability": FaNetworkWired,
+  "Product Engineering": FaCogs,
 };
 
 const experiences = [
@@ -48,13 +54,14 @@ const experiences = [
     title: "Founding Engineer",
     company: "i4 Ops",
     date: "Jul 2025 - Present",
-    location: "Salt Lake City, UT",
+    location: "Fully remote",
     description: [
-      "Building real-time infrastructure monitoring and secure data systems to prevent enterprise data exfiltration",
-      "Spearheading development of internal monitoring tools and system integration pipelines with a focus on observability, resilience, and secure-by-design architecture",
-      "Collaborating directly with the CEO and founding team to shape zero-exfiltration security architecture, product roadmap, and cloud deployment strategy"
+      "Building public-safe zero-exfiltration infrastructure security products for AI-era data risk at an early-stage startup",
+      "Working across Go, Python, cloud infrastructure, and product engineering while keeping company implementation details private",
+      "Collaborating with the founding team on security architecture, customer discovery, roadmap tradeoffs, and production delivery",
+      "Applying observability, secure-by-design engineering, and automation practices to infrastructure security workflows"
     ],
-    tech: ["Python", "AWS", "Docker", "Kubernetes", "Terraform", "Security"]
+    tech: ["Go", "Python", "AWS", "Kubernetes", "Terraform", "Infrastructure Security", "Cloud Systems", "Observability", "Product Engineering"]
   },
   {
     title: "Software Engineer",
@@ -62,9 +69,8 @@ const experiences = [
     date: "Oct 2023 – May 2025",
     location: "Salt Lake City, UT",
     description: [
-      "Streamlined record ingest workflows through ticketing systems, reducing processing time by 30%",
-      "Engineered data verification workflows with Python, reducing manual effort by 70% and ensuring 99.9% data accuracy",
-      "Automated metadata validation and extraction processes using Python and Bash, enhancing digital preservation integrity across 1M+ records"
+      "Reduced manual data verification effort by 70% while maintaining 99.9% accuracy across 1M+ records by engineering automated Python validation workflows",
+      "Improved digital preservation integrity for 1M+ archival records by building automated metadata extraction and validation pipelines in Python and Bash that caught schema violations before ingest"
     ],
     tech: ["Python", "AWS", "Data Processing", "Bash", "Automation", "API Integration"]
   },
@@ -74,11 +80,11 @@ const experiences = [
     date: "Oct 2021 – Oct 2022",
     location: "Pune, India",
     description: [
-      "Developed full-stack e-commerce platforms using React, SQL, and REST APIs, improving system scalability",
-      "Optimized backend queries, caching, and API response times, reducing page load times by 30% & bounce rates by 12%",
-      "Designed and implemented responsive UI/UX with Figma, CSS and Adobe Creative Cloud resulting in a 25% increase in user engagement"
+      "Shipped 3 full-stack e-commerce platforms handling 10K+ daily transactions using React and SQL-backed REST APIs, scaling to 2x traffic growth without infrastructure changes",
+      "Reduced page load times by 30% and bounce rates by 12% by optimizing SQL execution plans, implementing Redis caching, and restructuring API payloads",
+      "Increased user engagement by 25% through responsive product UI redesigns in Figma and CSS that improved mobile conversion"
     ],
-    tech: ["React.js", "Node.js", "SQL", "REST APIs", "Performance Optimization", "UX/UI"]
+    tech: ["React.js", "Node.js", "SQL", "REST APIs", "Redis", "Performance Optimization", "UX/UI"]
   }
 ];
 
@@ -143,11 +149,11 @@ export default function Experience() {
                           <span className="text-gray-300">{exp.company}</span>
                           <div className="flex items-center gap-4 text-sm text-gray-400">
                             <span className="flex items-center gap-1">
-                              <FaMapMarkerAlt className="w-3 h-3" />
+                              <FaMapMarkerAlt className="w-3 h-3" aria-hidden="true" />
                               {exp.location}
                             </span>
                             <span className="flex items-center gap-1">
-                              <FaCalendarAlt className="w-3 h-3" />
+                              <FaCalendarAlt className="w-3 h-3" aria-hidden="true" />
                               {exp.date}
                             </span>
                           </div>
@@ -178,7 +184,7 @@ export default function Experience() {
                                        text-emerald-400 rounded-full border border-emerald-500/20 hover:border-emerald-500/40 
                                        transition-all duration-300 hover:scale-105 hover:shadow-[0_0_10px_rgba(0,255,127,0.2)]"
                             >
-                              {Icon && <Icon className="w-3.5 h-3.5" />}
+                              {Icon && <Icon className="w-3.5 h-3.5" aria-hidden="true" />}
                               {tech}
                             </span>
                           );

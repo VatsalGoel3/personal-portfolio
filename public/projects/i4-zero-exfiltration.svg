@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">i4 Ops infrastructure security</title>
+  <desc id="desc">Public-safe infrastructure security illustration with protected data boundaries.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#06111f"/>
+      <stop offset="56%" stop-color="#0a1f32"/>
+      <stop offset="100%" stop-color="#052e2b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <g opacity=".18" stroke="#94a3b8">
+    <path d="M0 120h1200M0 240h1200M0 360h1200M0 480h1200M0 600h1200"/>
+    <path d="M120 0v720M240 0v720M360 0v720M480 0v720M600 0v720M720 0v720M840 0v720M960 0v720M1080 0v720"/>
+  </g>
+  <g fill="#e2e8f0" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
+    <text x="80" y="110" font-size="44" font-weight="800">Infrastructure Security</text>
+    <text x="82" y="158" font-size="24" fill="#94a3b8">Public-safe product work • zero-exfiltration data protection</text>
+  </g>
+  <g stroke="url(#accent)" stroke-width="8" stroke-linecap="round" fill="none" filter="url(#glow)">
+    <path d="M185 430c150-140 278-140 430 0s282 140 430 0"/>
+    <path d="M220 514c120-80 238-80 356 0s244 80 388 0" opacity=".7"/>
+  </g>
+  <g fill="#0f172a" stroke="#22c55e" stroke-width="4">
+    <rect x="110" y="348" width="184" height="132" rx="20"/>
+    <rect x="458" y="278" width="284" height="184" rx="24"/>
+    <rect x="906" y="348" width="184" height="132" rx="20"/>
+  </g>
+  <g fill="#e2e8f0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+    <text x="150" y="406" font-size="24">signals</text>
+    <text x="492" y="340" font-size="26">protected boundary</text>
+    <text x="954" y="406" font-size="24">review</text>
+    <text x="506" y="394" font-size="20" fill="#86efac">implementation details private</text>
+  </g>
+  <path d="M600 486l78 38v72c0 42-30 78-78 104-48-26-78-62-78-104v-72l78-38z" fill="#052e2b" stroke="#38bdf8" stroke-width="5" filter="url(#glow)"/>
+  <path d="M566 586l25 25 52-66" fill="none" stroke="#22c55e" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,17 +1,18 @@
 import { 
   FaCode, FaServer, FaDatabase, FaCogs, 
-  FaNetworkWired, FaBook, FaLayerGroup, FaGlobe, FaAws
+  FaNetworkWired, FaBook, FaLayerGroup, FaGlobe, FaAws, FaShieldAlt, FaRobot
 } from 'react-icons/fa';
 import { 
   SiFlask, SiReact, SiMysql, SiPython, 
   SiGo, SiDocker, SiKubernetes, SiTerraform,
-  SiJavascript, SiCss3, SiHtml5, SiPydantic
+  SiJavascript, SiCss3, SiHtml5, SiPydantic, SiPostgresql, SiRedis, SiTypescript
 } from 'react-icons/si';
 import { IconType } from 'react-icons';
 
 export type IconName =
   | "Flask"
   | "React"
+  | "TypeScript"
   | "MySQL"
   | "Python"
   | "Machine Learning"
@@ -31,11 +32,21 @@ export type IconName =
   | "WebSocket"
   | "Middleware"
   | "Validation"
-  | "Pydantic";
+  | "Pydantic"
+  | "OpenTelemetry"
+  | "Tracing"
+  | "Security"
+  | "Zero Trust"
+  | "Telemetry"
+  | "PostgreSQL"
+  | "Redis"
+  | "Automation"
+  | "AI";
 
 export const IconMap: Record<IconName, IconType> = {
   Flask: SiFlask,
   React: SiReact,
+  TypeScript: SiTypescript,
   MySQL: SiMysql,
   Python: SiPython,
   "Machine Learning": FaDatabase,
@@ -55,5 +66,14 @@ export const IconMap: Record<IconName, IconType> = {
   WebSocket: FaNetworkWired,     // can use same FaNetworkWired or custom later
   Middleware: FaCogs,            // Cogs for Middleware (Processing)
   Validation: FaBook,            // Book to represent Validation/Rules
-  Pydantic: SiPydantic           // if you have SiPydantic available
+  Pydantic: SiPydantic,          // if you have SiPydantic available
+  OpenTelemetry: FaNetworkWired,
+  Tracing: FaLayerGroup,
+  Security: FaShieldAlt,
+  "Zero Trust": FaShieldAlt,
+  Telemetry: FaNetworkWired,
+  PostgreSQL: SiPostgresql,
+  Redis: SiRedis,
+  Automation: FaCogs,
+  AI: FaRobot
 };

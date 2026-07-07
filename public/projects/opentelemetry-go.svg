@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">OpenTelemetry Go SDK project image</title>
+  <desc id="desc">Dark telemetry pipeline illustration with connected traces, spans, and Go/OpenTelemetry labels.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#071525"/>
+      <stop offset="56%" stop-color="#0f2540"/>
+      <stop offset="100%" stop-color="#052e2b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <g opacity=".22" stroke="#94a3b8" stroke-width="1">
+    <path d="M0 120h1200M0 240h1200M0 360h1200M0 480h1200M0 600h1200"/>
+    <path d="M120 0v720M240 0v720M360 0v720M480 0v720M600 0v720M720 0v720M840 0v720M960 0v720M1080 0v720"/>
+  </g>
+  <g filter="url(#glow)">
+    <path d="M190 420 C330 250 448 520 590 344 S840 230 1015 335" fill="none" stroke="url(#accent)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M220 505 C350 390 430 590 570 485 S780 445 1000 548" fill="none" stroke="#22c55e" stroke-width="5" stroke-linecap="round" opacity=".72"/>
+  </g>
+  <g fill="#0f172a" stroke="#22c55e" stroke-width="5">
+    <circle cx="190" cy="420" r="38"/>
+    <circle cx="590" cy="344" r="48"/>
+    <circle cx="1015" cy="335" r="38"/>
+    <circle cx="570" cy="485" r="30"/>
+    <circle cx="1000" cy="548" r="30"/>
+  </g>
+  <g fill="#e2e8f0" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
+    <text x="88" y="116" font-size="42" font-weight="700">OpenTelemetry Go SDK</text>
+    <text x="90" y="164" font-size="24" fill="#94a3b8">Distributed tracing • telemetry pipelines • observability</text>
+    <text x="170" y="431" font-size="30" font-weight="700">Go</text>
+    <text x="548" y="356" font-size="26" font-weight="700">trace</text>
+    <text x="973" y="346" font-size="26" font-weight="700">span</text>
+  </g>
+  <g transform="translate(90 560)">
+    <rect width="292" height="58" rx="12" fill="#0f172a" stroke="#22c55e" stroke-opacity=".55"/>
+    <text x="24" y="38" fill="#86efac" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22">CNCF contributor</text>
+  </g>
+</svg>

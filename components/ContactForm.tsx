@@ -3,11 +3,14 @@
 import { useState } from 'react';
 import { FaPaperPlane } from 'react-icons/fa';
 
+const FORM_NAME = 'contact';
+
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
+    botField: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [responseMessage, setResponseMessage] = useState('');
@@ -18,23 +21,31 @@ export default function ContactForm() {
     setResponseMessage('');
     
     try {
-      const res = await fetch('https://formspree.io/f/xdkalggb', {
+      const body = new URLSearchParams({
+        'form-name': FORM_NAME,
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        'bot-field': formData.botField
+      }).toString();
+
+      const res = await fetch('/__forms.html', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/x-www-form-urlencoded'
         },
-        body: JSON.stringify(formData)
+        body
       });
 
       if (res.ok) {
-        setResponseMessage('Thank you for your message!');
-        setFormData({ name: '', email: '', message: '' });
+        setResponseMessage('Thanks, I received your message.');
+        setFormData({ name: '', email: '', message: '', botField: '' });
       } else {
-        setResponseMessage('Failed to send message. Please try again later.');
+        setResponseMessage('Message did not send. Please email me directly.');
         console.error('Submission error:', res.statusText);
       }
     } catch (error) {
-      setResponseMessage('An error occurred while sending your message.');
+      setResponseMessage('Message did not send. Please email me directly.');
       console.error('Error sending message:', error);
     } finally {
       setIsSubmitting(false);
@@ -42,7 +53,27 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form
+      name={FORM_NAME}
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      onSubmit={handleSubmit}
+      className="space-y-4"
+    >
+      <input type="hidden" name="form-name" value={FORM_NAME} />
+      <p className="hidden">
+        <label>
+          Do not fill this out:
+          <input
+            name="bot-field"
+            value={formData.botField}
+            onChange={(e) => setFormData(prev => ({ ...prev, botField: e.target.value }))}
+            tabIndex={-1}
+            autoComplete="off"
+          />
+        </label>
+      </p>
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-gray-300">
           Name
@@ -50,7 +81,7 @@ export default function ContactForm() {
         <input
           type="text"
           id="name"
-          name="name"  // Required by Formspree
+          name="name"
           value={formData.name}
           onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
           required
@@ -66,7 +97,7 @@ export default function ContactForm() {
         <input
           type="email"
           id="email"
-          name="email"  // Required by Formspree
+          name="email"
           value={formData.email}
           onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
           required
@@ -81,7 +112,7 @@ export default function ContactForm() {
         </label>
         <textarea
           id="message"
-          name="message"  // Required by Formspree
+          name="message"
           rows={4}
           value={formData.message}
           onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
@@ -101,7 +132,7 @@ export default function ContactForm() {
         ) : (
           <>
             Send Message
-            <FaPaperPlane className="w-4 h-4" />
+            <FaPaperPlane className="w-4 h-4" aria-hidden="true" />
           </>
         )}
       </button>

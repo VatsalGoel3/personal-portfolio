@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Project image placeholder</title>
+  <desc id="desc">Generic project image placeholder.</desc>
+  <rect width="1200" height="720" fill="#0f172a"/>
+  <g opacity=".18" stroke="#94a3b8">
+    <path d="M0 120h1200M0 240h1200M0 360h1200M0 480h1200M0 600h1200"/>
+    <path d="M120 0v720M240 0v720M360 0v720M480 0v720M600 0v720M720 0v720M840 0v720M960 0v720M1080 0v720"/>
+  </g>
+  <rect x="348" y="246" width="504" height="228" rx="24" fill="#111827" stroke="#22c55e" stroke-width="4"/>
+  <circle cx="452" cy="324" r="34" fill="#22c55e"/>
+  <path d="M392 424l126-104 90 82 76-58 124 80" fill="none" stroke="#38bdf8" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="600" y="542" text-anchor="middle" fill="#cbd5e1" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="34" font-weight="700">Project preview</text>
+</svg>

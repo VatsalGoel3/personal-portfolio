@@ -2,11 +2,11 @@
 
 import { 
   FaGithub, FaCode, FaServer, FaTools,
-  FaPython, FaJava, FaJs, FaReact, FaAws, FaDocker, FaLinkedin
+  FaPython, FaJava, FaJs, FaReact, FaAws, FaDocker, FaLinkedin, FaArrowRight
 } from "react-icons/fa";
 import { 
   SiTypescript, SiGo, SiKubernetes, 
-  SiTerraform, SiFlask, SiMysql, SiFastapi, SiPydantic, SiC
+  SiTerraform, SiFlask, SiMysql, SiFastapi, SiPydantic, SiC, SiPostgresql, SiRedis
 } from "react-icons/si";
 import ProjectCard from '@/components/ProjectCard';
 import ContactForm from '@/components/ContactForm';
@@ -17,19 +17,20 @@ import TerminalText from '@/components/TerminalText';
 import TerminalWindow from '@/components/TerminalWindow';
 import { useEffect, useState } from 'react';
 import { IconName } from "@/utils/icons";
+import Link from "next/link";
 
 const skills = {
   languages: [
     { name: "Python", icon: FaPython, level: "Advanced" },
+    { name: "Go", icon: SiGo, level: "Advanced" },
     { name: "TypeScript", icon: SiTypescript, level: "Advanced" },
     { name: "Java", icon: FaJava, level: "Intermediate" },
     { name: "SQL", icon: SiMysql, level: "Intermediate" },
-    { name: "Go", icon: SiGo, level: "Intermediate" },
     { name: "C", icon: SiC, level: "Intermediate" }
   ],
   frameworks: [
-    { name: "Flask", icon: SiFlask, level: "Advanced" },
     { name: "FastAPI", icon: SiFastapi, level: "Advanced" },
+    { name: "Flask", icon: SiFlask, level: "Advanced" },
     { name: "Node.js", icon: FaJs, level: "Advanced" },
     { name: "React", icon: FaReact, level: "Intermediate" },
     { name: "Pydantic", icon: SiPydantic, level: "Advanced" }
@@ -39,46 +40,73 @@ const skills = {
     { name: "Docker", icon: FaDocker, level: "Advanced" },
     { name: "Kubernetes", icon: SiKubernetes, level: "Intermediate" },
     { name: "Terraform", icon: SiTerraform, level: "Intermediate" },
+    { name: "PostgreSQL", icon: SiPostgresql, level: "Advanced" },
+    { name: "Redis", icon: SiRedis, level: "Intermediate" },
     { name: "Git", icon: FaGithub, level: "Advanced" },
     { name: "CI/CD", icon: FaCode, level: "Advanced" }
   ]
 };
 
+const selectedImpact = [
+  {
+    metric: "AWS",
+    label: "release notes",
+    detail: "Recognized for public Powertools contributions across Python and TypeScript"
+  },
+  {
+    metric: "CNCF",
+    label: "observability",
+    detail: "Public OpenTelemetry work in Go-based telemetry infrastructure"
+  },
+  {
+    metric: "3/4",
+    label: "scenarios improved",
+    detail: "Intent-aware reranker improved alignment in reproducible offline evaluation"
+  },
+  {
+    metric: "1M+",
+    label: "records validated",
+    detail: "Automated archival data verification with 99.9% accuracy"
+  }
+];
+
 const featuredProjects = [
   {
-    title: "AWS Powertools (TypeScript)",
-    description: "Open-source contributions to AWS Powertools for Lambda (TypeScript), including JSON Schema validation, @validator decorator, and Middy.js middleware integration. Featured in 3+ AWS release notes.",
-    image: "/projects/aws-powertools-ts.png",
-    githubUrl: "https://github.com/awslabs/aws-lambda-powertools-typescript",
-    tags: [
-      { name: "TypeScript", icon: "TypeScript" as IconName },
-      { name: "AWS", icon: "AWS" as IconName },
-      { name: "Middy.js", icon: "Middleware" as IconName },
-      { name: "Validation", icon: "Validation" as IconName }
-    ]
-  },
-  {
-    title: "CineMatch",
-    description: "Movie recommendation system using collaborative filtering and sentiment analysis to provide personalized movie suggestions.",
-    image: "/projects/cinematch.jpg",
-    githubUrl: "https://github.com/VatsalGoel3/CineMatch",
-    tags: [
-      { name: "Flask", icon: "Flask" as IconName },
-      { name: "React", icon: "React" as IconName },
-      { name: "MySQL", icon: "MySQL" as IconName },
-      { name: "Python", icon: "Python" as IconName },
-      { name: "Machine Learning", icon: "Machine Learning" as IconName }
-    ]
-  },
-  {
-    title: "Raft Key-Value Store",
-    description: "Distributed key-value store using Raft consensus protocol for fault tolerance and consistent data replication.",
-    image: "/projects/raft-kv.jpg",
+    title: "i4 Ops Infrastructure Security",
+    description: "Founding-engineer work on zero-exfiltration infrastructure security for AI-era data risk, described only at a public-safe product level.",
+    image: "/projects/i4-zero-exfiltration.svg",
+    href: "/projects/i4-ops-infrastructure-security",
     tags: [
       { name: "Go", icon: "Go" as IconName },
-      { name: "Distributed Systems", icon: "Distributed Systems" as IconName },
-      { name: "Raft", icon: "Raft" as IconName },
-      { name: "Consensus", icon: "Consensus" as IconName }
+      { name: "Python", icon: "Python" as IconName },
+      { name: "Security", icon: "Security" as IconName },
+      { name: "AWS", icon: "AWS" as IconName }
+    ]
+  },
+  {
+    title: "OpenTelemetry Go SDK",
+    description: "CNCF OpenTelemetry Go SDK contributions focused on telemetry pipeline behavior and production observability for distributed systems.",
+    image: "/projects/opentelemetry-go.svg",
+    href: "/projects/opentelemetry-go-sdk",
+    githubUrl: "https://github.com/open-telemetry/opentelemetry-go",
+    tags: [
+      { name: "Go", icon: "Go" as IconName },
+      { name: "OpenTelemetry", icon: "OpenTelemetry" as IconName },
+      { name: "Distributed Tracing", icon: "Tracing" as IconName },
+      { name: "CNCF", icon: "Server" as IconName }
+    ]
+  },
+  {
+    title: "Dynamic Queue Adaptation",
+    description: "Offline Python prototype testing whether manual queue insertions can improve short-term recommendation intent alignment versus a static seed-only baseline.",
+    image: "/projects/dynamic-queue-adaptation.svg",
+    href: "/projects/dynamic-queue-adaptation",
+    githubUrl: "https://github.com/VatsalGoel3/dynamic-queue-adaptation",
+    tags: [
+      { name: "Python", icon: "Python" as IconName },
+      { name: "AI", icon: "AI" as IconName },
+      { name: "Ranking", icon: "Machine Learning" as IconName },
+      { name: "Evaluation", icon: "Validation" as IconName }
     ]
   }
 ];
@@ -127,10 +155,10 @@ export default function Home() {
                   Vatsal Goel
                 </h1>
                 <span className="block text-emerald-600 mt-2 sm:mt-4 text-2xl sm:text-5xl lg:text-7xl font-semibold">
-                  Software Engineer
+                  Founding Engineer
                 </span>
                 <p className="text-2xl sm:text-2xl lg:text-3xl font-semibold bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-700 text-transparent bg-clip-text leading-snug sm:leading-tight break-words">
-                  Engineering Scalable Cloud Solutions • Cybersecurity • AI-Driven Automation
+                  Infra security | Cloud systems | Open-source observability
                 </p>
               </motion.div>
               
@@ -144,13 +172,12 @@ export default function Home() {
                   delay: isFirstLoad ? 0.6 : 0.4 
                 }}
               >
-                Hi, I&apos;m Vatsal Goel, a Founding Engineer at i4 Ops, passionate about building scalable cloud systems, 
-                securing enterprise data, and driving automation. With experience in software development, cybersecurity, 
-                and cloud computing, I specialize in crafting efficient, high-performance solutions. 
+                Hi, I&apos;m Vatsal Goel, a founding engineer at i4 Ops working at the intersection of infrastructure security, 
+                cloud systems, and AI-era data risk. I keep company implementation details private here and focus on public-safe 
+                product outcomes, open-source work, and reproducible projects.
                 <span className="block mt-3 sm:mt-4">
-                  With my Master&apos;s in Computer Science from the University of Utah, 
-                  I&apos;ve worked on projects ranging from real-time infrastructure monitoring to large-scale distributed systems. 
-                  Let&apos;s connect and build something impactful!
+                  I&apos;m also an AWS Powertools maintainer and CNCF OpenTelemetry contributor, with a Master&apos;s in Computer Science 
+                  from the University of Utah and a product-minded focus on taking MVPs toward market-ready systems.
                 </span>
               </motion.p>
 
@@ -168,17 +195,19 @@ export default function Home() {
                   href="https://github.com/VatsalGoel3"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="GitHub profile"
                   className="p-4 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-all duration-300 hover:scale-110 hover:shadow-lg"
                 >
-                  <FaGithub className="w-10 h-10" />
+                  <FaGithub className="w-10 h-10" aria-hidden="true" />
                 </a>
                 <a 
                   href="https://www.linkedin.com/in/vatsal-goel3/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="LinkedIn profile"
                   className="p-4 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-all duration-300 hover:scale-110 hover:shadow-lg"
                 >
-                  <FaLinkedin className="w-10 h-10" />
+                  <FaLinkedin className="w-10 h-10" aria-hidden="true" />
                 </a>
               </motion.div>
             </div>
@@ -202,6 +231,33 @@ export default function Home() {
         </AnimatePresence>
       </div>
     </section>
+
+      {/* Selected Impact Section */}
+      <ScrollAnimation>
+        <section className="relative py-14 bg-white">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {selectedImpact.map((item, index) => (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.45, delay: index * 0.08 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  className="rounded-lg border border-gray-200 bg-white/90 p-5 shadow-sm"
+                >
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-4xl font-bold text-emerald-600">{item.metric}</span>
+                    <span className="text-sm font-semibold uppercase tracking-wide text-gray-500">{item.label}</span>
+                  </div>
+                  <p className="mt-3 text-sm leading-6 text-gray-600">{item.detail}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </ScrollAnimation>
 
       {/* Skills Section */}
       <ScrollAnimation>
@@ -243,9 +299,9 @@ export default function Home() {
                       className="space-y-6"
                     >
                       <div className="flex items-center gap-3 text-emerald-400 border-b border-gray-700/50 pb-4">
-                        {category === 'languages' && <FaCode className="w-6 h-6" />}
-                        {category === 'frameworks' && <FaServer className="w-6 h-6" />}
-                        {category === 'tools' && <FaTools className="w-6 h-6" />}
+                        {category === 'languages' && <FaCode className="w-6 h-6" aria-hidden="true" />}
+                        {category === 'frameworks' && <FaServer className="w-6 h-6" aria-hidden="true" />}
+                        {category === 'tools' && <FaTools className="w-6 h-6" aria-hidden="true" />}
                         <h3 className="text-2xl font-bold capitalize">
                           {category}
                         </h3>
@@ -259,7 +315,7 @@ export default function Home() {
                           >
                             <div className="flex items-center gap-4">
                               <div className="p-2 bg-gray-900/50 rounded-lg">
-                                <skill.icon className="w-5 h-5 text-emerald-400" />
+                                <skill.icon className="w-5 h-5 text-emerald-400" aria-hidden="true" />
                               </div>
                               <div className="flex-1">
                                 <h4 className="text-white font-medium group-hover:text-emerald-400 transition-colors">
@@ -304,6 +360,15 @@ export default function Home() {
                   </motion.div>
                 ))}
               </div>
+              <div className="mt-8 flex justify-center">
+                <Link
+                  href="/projects"
+                  className="inline-flex items-center gap-2 rounded-md bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700"
+                >
+                  View all projects
+                  <FaArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
+              </div>
             </TerminalWindow>
           </div>
         </section>
@@ -328,13 +393,13 @@ export default function Home() {
                   
                   <div className="space-y-4">
                     <a 
-                      href="mailto:vatsal.goel@utah.edu"
+                      href="mailto:goelvt3@gmail.com"
                       className="flex items-center gap-3 text-gray-300 hover:text-emerald-400 transition-colors"
                     >
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
-                      vatsal.goel@utah.edu
+                      goelvt3@gmail.com
                     </a>
                     
                     <a 
@@ -343,7 +408,7 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 text-gray-300 hover:text-emerald-400 transition-colors"
                     >
-                      <FaGithub className="w-5 h-5" />
+                      <FaGithub className="w-5 h-5" aria-hidden="true" />
                       GitHub
                     </a>
                     <a 
@@ -352,7 +417,7 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 text-gray-300 hover:text-emerald-400 transition-colors"
                     >
-                      <FaLinkedin className="w-5 h-5" />
+                      <FaLinkedin className="w-5 h-5" aria-hidden="true" />
                       LinkedIn
                     </a>
                   </div>
